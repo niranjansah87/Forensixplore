@@ -125,7 +125,7 @@ fieldset {
 
 /*END PRELOADER DESIGN*/
 .section-padding {
-  padding: 80px 0;
+  padding: 30px 0;
 }
 /*START SECTION TITLE DESIGN*/
 .section-title {
@@ -679,6 +679,104 @@ fieldset {
   padding: 25px;
   border-radius: 10px;
 }
+.abmv2-container {
+  width: 575px;
+    margin-left: -576px;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+}
+
+.abmv2 {
+  margin-bottom: 30px;
+  background: #1a2237;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.abmv2-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+}
+
+.abmv2 {
+  margin-bottom: 30px;
+  background: #1a2237;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.abmv2-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+}
+
+.abmv2 {
+  margin-bottom: 30px;
+  background: #1a2237;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.abmv2-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+}
+
+.abmv2 {
+  margin-bottom: 30px;
+  background: #1a2237;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.abmv2-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+}
+
+.abmv2 {
+  margin-bottom: 30px;
+  background: #1a2237;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.abmv2-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+}
+
+.abmv2 {
+  margin-bottom: 30px;
+  background: #1a2237;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.abmv2-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+}
+
+.abmv2 {
+  margin-bottom: 30px;
+  background: #1a2237;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.abmv2-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+}
+
+.abmv2 {
+  margin-bottom: 30px;
+  background: #1a2237;
+  padding: 25px;
+  border-radius: 10px;
+}
+
 .abmv span {
   color: #18fef5;
 }
@@ -777,6 +875,7 @@ fieldset {
 * ----------------------------------------------------------------------------------------
 */
 .single_service {
+  margin-left: 45px;
   margin-bottom: 30px;
 }
 .single_service img {
@@ -1347,8 +1446,7 @@ blockquote::before,
   font-size: 20px;
   margin-bottom: 0;
 }
-.single_team p {
-}
+
 /*
 * ----------------------------------------------------------------------------------------
 * 11.END END DESIGN
@@ -1365,8 +1463,6 @@ blockquote::before,
   font-weight: 800;
   font-size: 40px;
   margin-bottom: 20px;
-}
-.subs_form p {
 }
 
 .home_subs {
@@ -1450,14 +1546,12 @@ blockquote::before,
   border-radius: 10px;
   margin-bottom: 20px;
 }
-.single_blog span {
-}
+
 .single_blog span a {
   color: #4aa5f0;
   margin-right: 30px;
 }
-.single_blog h3 {
-}
+
 .single_blog h3 a {
   color: #fff;
   font-size: 18px;
@@ -1504,7 +1598,7 @@ blockquote::before,
 * ----------------------------------------------------------------------------------------
 */
 .footer {
-  padding-bottom: 40px;
+  padding-bottom: 10px;
 
 }
 .single_footer {
@@ -1512,7 +1606,7 @@ blockquote::before,
 }
 @media only screen and (max-width: 880px) {
   .single_footer {
-    margin-bottom: 40px;
+    margin-bottom: 10px;
   }
 }
 .single_footer img {
@@ -1574,7 +1668,7 @@ blockquote::before,
   margin-bottom: 0;
 }
 .fc {
-  margin-top: 60px;
+  margin-top: 30px;
   /* background: #2b2a5e; */
   padding-top: 40px;
   border-top: 1px solid #373e51;
@@ -1723,8 +1817,7 @@ blockquote::before,
   font-weight: 700;
   font-size: 50px;
 }
-.section-top-title ul {
-}
+
 .section-top-title ul li {
   color: #fff !important;
   display: inline-block;
