@@ -34,14 +34,14 @@
 		
 	</head>
 	
-    <body data-spy="scroll" data-offset="80">
+    <body>
 
-		<!-- START PRELOADER -->
-		<div class="preloaders">
-			<span class="loader"></span>
-		</div>
-		<!-- END PRELOADER -->		
-
+		<div class="loader">
+			<video autoplay muted id="loader-video">
+			  <source src="./assets/loader.mp4" type="video/mp4">
+			</video>
+		  </div>
+		  <div id="content" style="display: none;">
 		<!-- START NAVBAR -->  
 		<div id="navigation" class="navbar-light bg-faded site-navigation">
 			<div class="container-fluid">
@@ -717,6 +717,7 @@
 		</div><!--- END CONTAINER -->
 	</div>
 	<!-- END FOOTER -->			
+</div>
 	
 	<!-- Latest jQuery -->
 		<script src="assets/js/jquery-1.12.4.min.js"></script>
@@ -742,5 +743,22 @@
 		<script src="assets/js/wow.min.js"></script>				
 	<!-- scripts js -->
 		<script src="assets/js/scripts.js"></script>
+
+
+		<script>
+			window.addEventListener('DOMContentLoaded', () => {
+			  const loaderVideo = document.getElementById('loader-video');
+			  const content = document.getElementById('content');
+		  
+			  // Add event listener to hide loader and show content when video ends
+			  loaderVideo.addEventListener('ended', () => {
+				const loader = document.querySelector('.loader');
+				loader.style.display = 'none'; // Hide loader
+				content.style.display = 'block'; // Show content
+			  });
+			});
+			
+			
+		  </script>
     </body>
 </html>
