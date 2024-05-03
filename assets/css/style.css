@@ -278,7 +278,7 @@ fieldset {
 }
 
 #navigation {
-  padding: 5px 50px;
+  padding: 10px 50px;
 }
 
 #main-menu ul {
@@ -1535,8 +1535,7 @@ blockquote::before,
   padding: 0;
   list-style: none;
 }
-.single_footer ul li {
-}
+
 .single_footer ul li a {
   color: #fff;
   -webkit-transition: all 0.3s ease 0s;
@@ -1704,7 +1703,7 @@ blockquote::before,
 .section-top {
   padding-top: 60px;
   position: relative;
-  background: url(../img/bg/section-2.jpg);
+  background: url(../img/bg/section-top.jpg);
   background-size: cover;
   background-position: center;
   padding-bottom: 60px;
