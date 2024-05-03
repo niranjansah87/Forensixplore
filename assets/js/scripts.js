@@ -1,8 +1,8 @@
-/*
-Author       : theme_ocean
-Template Name: Cybal - Cyber Security HTML Template
-Version      : 1.0
-*/
+
+
+
+
+
 (function ($) {
   "use strict";
 
@@ -93,15 +93,27 @@ let lastTime = new Date().getTime(),
 
 const myScroller1 = new SuperMarquee(document.getElementById("supermarquee1"), {
   content:
-    "*Access Control Lists* &nbsp &nbsp  *Search Functionalty* &nbsp &nbsp  *legal Disclaimers*  &nbsp &nbsp  *Network Seqmenttation* &nbsp &nbsp  *Feedback & Reporting* &nbsp &nbsp",
+    "*Ethical Hacking and Penetration Testing* &nbsp &nbsp  *Security Best Practices* &nbsp &nbsp  *Legal and Ethical Considerations*  &nbsp &nbsp  *Real-World Case Studies and Scenarios* &nbsp &nbsp  *Cybersecurity Fundamentals* &nbsp &nbsp",
 });
 
 function loop() {
   window.requestAnimationFrame(loop);
   currentTime = new Date().getTime();
   delta = (currentTime - lastTime) / 9000;
-  myScroller4.setPerspective('{ "rotateY" : ' + 30 * Math.sin(delta) + "}");
+  myScroller1.setPerspective('{ "rotateY" : ' + 30 * Math.sin(delta) + "}");
 }
 
 loop();
 /*END MARQUEE JS*/
+
+
+
+
+
+
+
+
+
+
+
+

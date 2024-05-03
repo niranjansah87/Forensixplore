@@ -1099,8 +1099,8 @@ blockquote::before,
   font-size: 20px;
 }
 /*START PROJECT DETAILS*/
-single_port_details {
-
+.single_port_details {
+}
 .single_port_details img {
   width: 100%;
   border-radius: 10px;
