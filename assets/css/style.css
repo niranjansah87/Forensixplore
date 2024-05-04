@@ -1667,7 +1667,7 @@ blockquote::before,
 .fc {
   margin-top: -20px;
   /* background: #2b2a5e; */
-  padding-top: 35px;
+  padding-top: 45px;
   
 }
 .footer_copyright {
@@ -1776,7 +1776,7 @@ blockquote::before,
 }
 
 .justify-content-center {
-  margin-left: 175px;
+  margin-left: 180px;
   justify-content: center;
 }
 
