@@ -57,7 +57,7 @@
   transform: scale(1.2);
 }
 
-.teamcontainer h3 {
+.teamcontainer h4 {
   position: absolute;
   background: #000000;
   width: 100%;
@@ -71,7 +71,7 @@
   transform-origin: bottom;
 }
 
-.teamcontainer:hover h3 {
+.teamcontainer:hover h4 {
   transform: perspective(300px) rotateX(0deg);
 }
 
@@ -154,14 +154,14 @@
   opacity: 1;
 }
 
-.text-container h3, .text-container h6 {
+.text-container h4, .text-container h6 {
   margin: 0;
   color: #fefdfd;
   text-align: center; /* Align text in the center */
 }
 
-/* Adjust the positioning of h3 and h6 */
-.text-container h3 {
+/* Adjust the positioning of h4 and h6 */
+.text-container h4 {
   position: relative; /* Change position to relative */
   line-height: 30px; /* Increase line-height for better spacing */
 }
