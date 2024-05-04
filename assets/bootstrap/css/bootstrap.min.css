@@ -654,7 +654,11 @@ progress {
   height: 200px; /* Adjust the height to your desired fixed size */
   
 }
-
+.img-fluid3 {
+  width: 90%;
+  object-fit: cover;
+  height: 200px;
+}
 .img-thumbnail {
   padding: 0.25rem;
   background-color: var(--bs-body-bg);
