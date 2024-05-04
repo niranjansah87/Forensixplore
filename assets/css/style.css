@@ -1665,9 +1665,9 @@ blockquote::before,
   margin-bottom: 0;
 }
 .fc {
-  margin-top: 5px;
+  margin-top: -20px;
   /* background: #2b2a5e; */
-  padding-top: 40px;
+  padding-top: 35px;
   
 }
 .footer_copyright {
