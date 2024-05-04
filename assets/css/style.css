@@ -542,7 +542,7 @@ fieldset {
 }
 @media only screen and (max-width: 768px) {
   .home_me_img img {
-    padding-top: 50px;
+    padding-top: 40px;
   }
 }
 .home_btns {
@@ -682,94 +682,23 @@ fieldset {
 }
 .abmv2-container {
   width: 575px;
-  margin-left: -660px;
+  margin-left: -640px;
   display: flex;
   flex-direction: column; /* Stack items vertically */
 }
 
-.abmv2 {
-  margin-bottom: 30px;
-  background: #1a2237;
-  padding: 25px;
-  border-radius: 10px;
-}
 
-.abmv2-container {
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-}
 
-.abmv2 {
-  margin-bottom: 30px;
-  background: #1a2237;
-  padding: 25px;
-  border-radius: 10px;
-}
 
-.abmv2-container {
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-}
 
-.abmv2 {
-  margin-bottom: 30px;
-  background: #1a2237;
-  padding: 25px;
-  border-radius: 10px;
-}
 
-.abmv2-container {
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-}
 
-.abmv2 {
-  margin-bottom: 30px;
-  background: #1a2237;
-  padding: 25px;
-  border-radius: 10px;
-}
 
-.abmv2-container {
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-}
 
-.abmv2 {
-  margin-bottom: 30px;
-  background: #1a2237;
-  padding: 25px;
-  border-radius: 10px;
-}
 
-.abmv2-container {
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-}
 
-.abmv2 {
-  margin-bottom: 30px;
-  background: #1a2237;
-  padding: 25px;
-  border-radius: 10px;
-}
 
-.abmv2-container {
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-}
 
-.abmv2 {
-  margin-bottom: 30px;
-  background: #1a2237;
-  padding: 25px;
-  border-radius: 10px;
-}
-
-.abmv2-container {
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-}
 
 .abmv2 {
   margin-bottom: 30px;
@@ -1435,9 +1364,23 @@ blockquote::before,
 }
 @media only screen and (max-width: 480px) {
   .single_team img {
+    height: 100%;
     width: 100%;
   }
+  /* .single_team > .img-fluid2 {
+    width: 200px !important;
+    object-fit: cover;
+    height: 200px !important;
+  } */
+  .sk_img > .img-fluid {
+    
+    margin-top: -70px !important;
+    
+  }
 }
+
+
+
 .single_team h4 {
   font-weight: 600;
   font-size: 20px;
