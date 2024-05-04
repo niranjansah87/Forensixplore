@@ -682,7 +682,7 @@ fieldset {
 }
 .abmv2-container {
   width: 575px;
-    margin-left: -576px;
+  margin-left: -660px;
   display: flex;
   flex-direction: column; /* Stack items vertically */
 }
