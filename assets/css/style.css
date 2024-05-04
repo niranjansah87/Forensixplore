@@ -175,6 +175,7 @@ fieldset {
   line-height: 47px;
   opacity: 1;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
   position: fixed;
   right: 5px;
   text-align: center;
@@ -278,7 +279,7 @@ fieldset {
 }
 
 #navigation {
-  padding: 10px 50px;
+  padding: 0px 50px;
 }
 
 #main-menu ul {
@@ -321,6 +322,7 @@ fieldset {
   margin: 0;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
   padding: 10px;
   position: absolute;
   text-align: left;
@@ -380,7 +382,7 @@ fieldset {
 #navigation #main-menu ul li:hover ul,
 #navigation #main-menu ul li ul li:hover > ul {
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
   visibility: visible;
   top: 100%;
 }
@@ -534,8 +536,7 @@ fieldset {
 .home_btn a {
   margin-right: 10px;
 }
-.about_btn a span {
-}
+
 .home_me_img img {
   padding-top: 150px;
 }
@@ -906,8 +907,7 @@ fieldset {
     margin-bottom: 60px;
   }
 }
-.ser_btn a {
-}
+
 /*SINGLE SERVICE DETAILS*/
 .single_service_details {
   margin-bottom: 30px;
@@ -928,8 +928,7 @@ fieldset {
 .single_ssd_info h4 {
   font-weight: 600;
 }
-.single_ssd_info p {
-}
+
 .video-area {
   height: 400px;
   position: relative;
@@ -1078,6 +1077,7 @@ blockquote::before,
 .single_port span {
   background: linear-gradient(90deg, #4aa5f0 0%, #ff0080 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .single_port h4 {
@@ -1099,8 +1099,7 @@ blockquote::before,
   font-size: 20px;
 }
 /*START PROJECT DETAILS*/
-.single_port_details {
-}
+
 .single_port_details img {
   width: 100%;
   border-radius: 10px;
@@ -1119,15 +1118,13 @@ blockquote::before,
   float: left;
   margin-bottom: 30px;
 }
-.single_port_details ul li {
-}
+
 .single_port_details > ul > li > img {
   width: 20px;
   margin-bottom: 0;
   margin-right: 10px;
 }
-.port_details_list {
-}
+
 
 .about_project_details {
   background: #1a2237;
@@ -1181,6 +1178,7 @@ blockquote::before,
 .single-project2 h2:hover {
   background: linear-gradient(90deg, #ff0080 0%, #ff8c00 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-stroke: 0px;
   -webkit-text-fill-color: transparent;
 }
@@ -1345,8 +1343,7 @@ blockquote::before,
   width: 60px;
   margin-bottom: 20px;
 }
-.testimonial_content {
-}
+
 .testimonial_content h3 {
   font-weight: 600;
   font-size: 20px;
@@ -1406,7 +1403,7 @@ blockquote::before,
   color: #fff;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  display: inline;
   margin: 5px;
   padding: 3px 10px;
   font-size: 12px;
@@ -1906,8 +1903,7 @@ blockquote::before,
   margin-bottom: 20px;
   font-weight: 700;
 }
-.single_address p {
-}
+
 .sabr {
   border-right: 1px solid #2a344f;
   border-left: 1px solid #2a344f;
