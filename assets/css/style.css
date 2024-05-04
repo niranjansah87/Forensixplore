@@ -95,21 +95,20 @@ fieldset {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw; /* Use viewport width */
+  height: 100vh; /* Use viewport height */
   background-color: inherit;
   transition: opacity 0.10s ease;
   z-index: 9999;
+  display: flex; /* Use flexbox for centering */
+  justify-content: center;
+  align-items: center;
 }
 
 #loader-video {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover; 
+  width: 100vw; /* Set width to viewport width */
+  height: 100vh; /* Set height to viewport height */
+  object-fit: cover; /* Ensure the entire video is visible */
 }
 
 /* Hide content while loader is displayed */
@@ -277,6 +276,8 @@ fieldset {
 .site-logo img {
   max-width: 100%;
 }
+
+
 
 #navigation {
   padding: 0px 50px;
@@ -477,8 +478,11 @@ fieldset {
 }
 @media only screen and (max-width: 768px) {
   .home_bg {
+    max-width: 100%;
+    object-fit:cover;
+    
     height: auto;
-    position: relative;
+    /* position: relative; */
   }
   .hb_height {
     height: 800px;
@@ -1362,16 +1366,13 @@ blockquote::before,
   border-radius: 10px;
   margin-bottom: 20px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 980px) {
   .single_team img {
     height: 100%;
+    
     width: 100%;
   }
-  /* .single_team > .img-fluid2 {
-    width: 200px !important;
-    object-fit: cover;
-    height: 200px !important;
-  } */
+ 
   .sk_img > .img-fluid {
     
     margin-top: -70px !important;
