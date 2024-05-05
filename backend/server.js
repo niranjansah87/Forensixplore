@@ -16,8 +16,10 @@ app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
 
 
 // Available routes
-// app.use('/blog', require('./routes/blog_route'));
+app.use('/blog', require('./routes/blog_route'));
 app.use('/admin', require('./routes/admin'));
+app.use('/pevent', require('./routes/past_events'));
+app.use('/fevent', require('./routes/future_events'));
 
 
 // Start the server
