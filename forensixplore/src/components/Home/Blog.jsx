@@ -1,7 +1,7 @@
 
-import p1 from '../assets/img/blog/1.jpg';
-import p2 from '../assets/img/blog/2.jpg';
-import p3 from '../assets/img/blog/3.jpg';
+import p1 from './img/blog/1.jpg';
+import p2 from './img/blog/2.jpg';
+import p3 from './img/blog/3.jpg';
 
 const Blog = () => {
   return (

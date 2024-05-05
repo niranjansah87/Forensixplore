@@ -1,7 +1,7 @@
-import mithun from '../assets/img/team/Midhun sai Kothagundla.jpg'
-import khaja from '../assets/img/team/khaja.png'
-import sumanth from '../assets/img/team/sumanth.jpg'
-import niranjan from '../assets/img/team/niranjan.png'
+import mithun from './img/team/Midhun sai Kothagundla.jpg'
+import khaja from './img/team/khaja.png'
+import sumanth from './img/team/sumanth.jpg'
+import niranjan from './img/team/niranjan.png'
 
 const Team = () => {
   return (
@@ -13,7 +13,7 @@ const Team = () => {
               <span>Our team member</span>
               <h2>Meet our Dedicated Team members</h2>
               <p>Welcome to the Forensixplore Club, where cybersecurity and innovation unite! Our diverse team is dedicated to ethical hacking and safeguarding digital realms through collaboration and expertise. Join us in shaping a safer online world.</p>
-              <a href="./teamcard.html" className="btn_one">View all members <i className="ti-arrow-top-right"></i></a>
+              <a href="./" className="btn_one">View all members <i className="ti-arrow-top-right"></i></a>
             </div>					
           </div>
           <div className="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">	
