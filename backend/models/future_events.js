@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const blogSchema = new mongoose.Schema({
+const futureEventsSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
@@ -12,20 +12,20 @@ const blogSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        default: 'Security',
+        enum: ['TEC', 'HWB', 'ESO','LCH','IIE'],
+        default: 'TEC',
         required: true,
     },
-    blog_thumbnail: {
+    eventPoster: {
         type: String,
-        default: 'https://imageio.forbes.com/specials-images/dam/imageserve/1161250453/960x0.jpg?height=474&width=711&fit=bounds',
         required: true,
     },
-    blog_link: {
+    registrationLink: {
         type: String,
         required: false,
-        default: '/'
-    }
+        default: 'https://academics.klef.in/',
+    },
 });
 
-const Blog = mongoose.model('Blog', blogSchema);
-module.exports = Blog;
+const Event = mongoose.model('Future_events', futureEventsSchema);
+module.exports = Event;
