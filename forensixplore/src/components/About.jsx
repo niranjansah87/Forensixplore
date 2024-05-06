@@ -1,9 +1,11 @@
-
+import Navbar from './Navbar';
+import Footer from './Footor';
 import section2 from '../assets/img/bg/section-2.jpg'
 import csa from '../assets/img/csa.png'
 const About = () => {
   return (
     <>
+    <Navbar></Navbar>
     <div>
     
       {/* SECTION TOP */}
@@ -85,26 +87,76 @@ const About = () => {
       </section>
       {/* END BLOG */}
 
-      {/* START COUNTER */}
-      <section className="count_area counter_feature">
-        <div className="container">
-          <div className="row text-center">
-            {/* Add your counter components here */}
-          </div>
-        </div>
-      </section>
-      {/* END COUNTER */}
+  
 
       {/* START COUNTER */}
-      <section className="count_area counter_feature" style={{ marginTop: "-60px" }}>
-        <div className="container">
-          <div className="row text-center">
-            {/* Add your second set of counter components here */}
-          </div>
+      <section className="count_area counter_feature">
+  <div className="container">
+    <div className="row text-center">
+      <div className="col-lg-3 col-sm-6 col-xs-12 no-padding">
+        <div className="single-project3">
+          <h2 className="counter-num">5</h2>
+          <h4>Number of Mentors</h4>
         </div>
-      </section>
+      </div>
+      <div className="col-lg-3 col-sm-6 col-xs-12 no-padding">
+        <div className="single-project3">
+          <h2 className="counter-num">40</h2>
+          <h4>Events Conducted</h4>
+        </div>
+      </div>
+      <div className="col-lg-3 col-sm-6 col-xs-12 no-padding">
+        <div className="single-project3">
+          <h2 className="counter-num">484</h2>
+          <h4>Our Club Member</h4>
+        </div>
+      </div>
+      <div className="col-lg-3 col-sm-6 col-xs-12 no-padding">
+        <div className="single-project3">
+          <h2 className="counter-num">10</h2>
+          <h4>Project Completed</h4>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+</section>
+
+<section className="count_area counter_feature" style={{marginTop: '-60px' }}>
+  <div className="container">
+    <div className="row text-center">
+      
+      <div className="col-lg-3 col-sm-6 col-xs-12 no-padding">
+        <div className="single-project3">
+          <h2 className="counter-num">10</h2>
+          <h4>CEH Certified</h4>
+        </div>
+      </div>
+      <div className="col-lg-3 col-sm-6 col-xs-12 no-padding">
+        <div className="single-project3">
+          <h2 className="counter-num">20</h2>
+          <h4>AWS CP Certified</h4>
+        </div>
+      </div>
+      <div className="col-lg-3 col-sm-6 col-xs-12 no-padding">
+        <div className="single-project3">
+          <h2 className="counter-num">100</h2>
+          <h4>AZ-900 Certified</h4>
+        </div>
+      </div>
+      <div className="col-lg-3 col-sm-6 col-xs-12 no-padding">
+        <div className="single-project3">
+          <h2 className="counter-num">2</h2>
+          <h4>e-JPT Certified</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
       {/* END COUNTER */}
     </div>
+    <Footer></Footer>
     </>
   );
 }
