@@ -125,17 +125,18 @@
 .date2 {
   text-decoration: none;
   font-weight: 700;
-  margin-bottom: -20px;
+  font-size: 0.90em;
   margin-top: 10px;
-  font-weight: 200;
+  font-weight: bold;
 }
 
 .description {
   font-size: 1rem;
   font-weight: 200;
-  margin-top: -10px;
+  margin-top: 0px;
   margin-bottom: 20px;
   color: aqua;
+  line-height: 23px;
 
 
 }
@@ -144,26 +145,19 @@
   font-size: 1.5em;
 
   font-weight: bold;
-  margin-top: -10px;
+  margin-top: 5px;
 }
 
 .catagory{
-  /* margin-top: 8px; */
-  /* margin-left: 160px; */
-    margin-top: -24px;
-    display: block;
-    font-size: 0.83em;
-    margin-block-start: 1.67em;
-    margin-block-end: 1.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
-    unicode-bidi: isolate;
-    letter-spacing: 0px;
-    margin-top: 0px;
+  font-weight: bold;
+    margin-top: -25px;
+    text-align: center;
+    font-size: 0.90em;
+    margin-right: -170px;
+    margin-top: -26px;
     font-family: "Exo", sans-serif;
     color: #fff;
-    font-weight: 400;
+    font-weight:bold;
 }
 
 .context{
