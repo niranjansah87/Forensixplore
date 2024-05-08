@@ -139,7 +139,7 @@ router.get("/getblog/:id", async (req, res) => {
 });
 
 // Route 6: Get a blog using POST "/api/blog/getblog" by title. Login required
-router.post("/getblog",
+router.post("/getblog/title",
     [
         fetchuser,
         body("title", "Title is required").notEmpty()

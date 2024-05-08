@@ -1,9 +1,37 @@
-
-import p1 from './img/blog/1.jpg';
-import p2 from './img/blog/2.jpg';
-import p3 from './img/blog/3.jpg';
+import  { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Blog = () => {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []); // Fetch blogs on component mount
+
+  const fetchBlogs = async () => {
+    try {
+      const response = await axios.get('http://localhost:5001/blog/getblog');
+      const shuffledBlogs = shuffleArray(response.data.slice(0, 3)); // Limit to 3 blogs and shuffle
+      setBlogs(shuffledBlogs);
+    } catch (error) {
+      console.error('Error fetching blogs:', error);
+    }
+  };
+
+  // Function to shuffle array
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
+
+  // Function to slice date to display only YYYY-MM-DD format
+  const sliceDate = (dateString) => {
+    return dateString.split('T')[0];
+  };
+
   return (
     <section className="blog_area section-padding">
       <div className="container">
@@ -12,37 +40,21 @@ const Blog = () => {
           <h2>See our latest blog and <br />news from us</h2>
         </div>
         <div className="row">
-          <div className="col-lg-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
-            <div className="single_blog">
-              <img src={p1} className="img-fluid" alt="image" />
-              <span><a href="/">Security</a></span>
-              <span>February 15, 2024</span>
-              <h3><a href="/">How can you improvement to your business policy for the better product.</a></h3>
-              <a href="/" className="blog_btn">View Details <i className="ti-arrow-top-right"></i></a>
+          {blogs.map(blog => (
+            <div key={blog._id} className="col-lg-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+              <div className="single_blog">
+                <img src={blog.blog_thumbnail} className="img-fluid" alt="Blog Thumbnail" />
+                <span><a href="/">{blog.category}</a></span>
+                <span>{sliceDate(blog.date)}</span>
+                <h3><a href="/">{blog.title}</a></h3>
+                <a href={blog.blog_link} className="blog_btn" target="_blank" rel="noopener noreferrer">View Details <i className="ti-arrow-top-right"></i></a>
+              </div>
             </div>
-          </div>
-          <div className="col-lg-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
-            <div className="single_blog">
-              <img src={p2} className="img-fluid" alt="image" />
-              <span><a href="/">Security</a></span>
-              <span>February 15, 2024</span>
-              <h3><a href="/">people poputation change anything what your need for your next generation.</a></h3>
-              <a href="/" className="blog_btn">View Details <i className="ti-arrow-top-right"></i></a>
-            </div>
-          </div>
-          <div className="col-lg-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
-            <div className="single_blog">
-              <img src={p3} className="img-fluid" alt="image" />
-              <span><a href="/">Security</a></span>
-              <span>February 15, 2024</span>
-              <h3><a href="/">Improve your business so that you can stay in your local business in next month.</a></h3>
-              <a href="/" className="blog_btn">View Details <i className="ti-arrow-top-right"></i></a>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default Blog;

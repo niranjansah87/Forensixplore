@@ -13,7 +13,7 @@ const HomeCounter = () => {
                 <p>Forensixplore is a CyberSecurity Club of Department of CS&IT of KL University where curiosity meets investigation!. Our club is a dynamic and engaging community that delves into the fascinating world of forensic exploration and discovery. If you have an inquisitive mind and a passion for solving mysteries, this is the perfect club for you.</p>
               </div>
               <div className="home_btns">
-                <a href="/" className="btn_one">Discover More</a>
+                <a href="/about" className="btn_one">Discover More</a>
                 <a className="video-play" href="https://klu.chvinay.live/" target="_blank"><i className="ti-image"></i> <span className="video-title">College Tour</span></a>
               </div>
             </div>

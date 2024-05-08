@@ -51,9 +51,9 @@ const Team = () => {
                                 <h6>President</h6>
                             </div>
                             <ul className="socialul">
-                                <li className="social"><a href="https://www.linkedin.com/in/midhun-sai-kothagundla" target="_blank"><i className="fa fa-linkedin"></i></a></li>
-                                <li className="social"><a href="https://www.instagram.com/k.midhun_sai/" target="_blank"><i className="fa fa-instagram" ></i></a></li>
-                                <li className="social"><a href="https://github.com/midhunsaikothagundla" target="_blank"><i className="fa fa-github" ></i></a></li>
+                                <li className="social"><a href="https://www.linkedin.com/in/midhun-sai-kothagundla" target="_blank"><i className="fa ti-linkedin"></i></a></li>
+                                <li className="social"><a href="https://www.instagram.com/k.midhun_sai/" target="_blank"><i className="fa ti-instagram" ></i></a></li>
+                                <li className="social"><a href="https://github.com/midhunsaikothagundla" target="_blank"><i className="fa ti-github" ></i></a></li>
                             </ul>
                         </div>
 
@@ -64,9 +64,9 @@ const Team = () => {
                                 <h6>Director</h6>
                             </div>
                             <ul className="socialul">
-                                <li className="social"><a href="https://www.linkedin.com/in/kshaik1/" target="_blank"><i className="fa fa-linkedin" ></i></a></li>
-                                <li className="social"><a href="https://www.instagram.com/who_is_khaja_shaik/" target="_blank"><i className="fa fa-instagram" ></i></a></li>
-                                <li className="social"><a href="https://github.com/k-shaik" target="_blank"><i className="fa fa-github" ></i></a></li>
+                                <li className="social"><a href="https://www.linkedin.com/in/kshaik1/" target="_blank"><i className="fa ti-linkedin" ></i></a></li>
+                                <li className="social"><a href="https://www.instagram.com/who_is_khaja_shaik/" target="_blank"><i className="fa ti-instagram" ></i></a></li>
+                                <li className="social"><a href="https://github.com/k-shaik" target="_blank"><i className="fa ti-github" ></i></a></li>
                             </ul>
                         </div>
 
@@ -78,9 +78,9 @@ const Team = () => {
                                 <h6>Secretary</h6>
                             </div>
                             <ul className="socialul">
-                                <li className="social"><a href="https://www.linkedin.com/in/jonnalagaddasumanthdhruva/" target="_blank"><i className="fa fa-linkedin" ></i></a></li>
-                                <li className="social"><a href="https://www.instagram.com/sumanthdruva/" target="_blank"><i className="fa fa-instagram" ></i></a></li>
-                                <li className="social"><a href="https://github.com/sumanthdhruva" target="_blank"><i className="fa fa-github" ></i></a></li>
+                                <li className="social"><a href="https://www.linkedin.com/in/jonnalagaddasumanthdhruva/" target="_blank"><i className="fa ti-linkedin" ></i></a></li>
+                                <li className="social"><a href="https://www.instagram.com/sumanthdruva/" target="_blank"><i className="fa ti-instagram" ></i></a></li>
+                                <li className="social"><a href="https://github.com/sumanthdhruva" target="_blank"><i className="fa ti-github" ></i></a></li>
                             </ul>
                         </div>
 
@@ -91,9 +91,9 @@ const Team = () => {
                                 <h6>Administrator Head</h6>
                             </div>
                             <ul className="socialul">
-                                <li className="social"><a href="https://www.linkedin.com/in/niranjan-sah/" target="_blank"><i className="fa fa-linkedin" ></i></a></li>
-                                <li className="social"><a href="https://www.instagram.com/niranjansah8790/" target="_blank"><i className="fa fa-instagram" ></i></a></li>
-                                <li className="social"><a href="https://github.com/niranjansah87" target="_blank"><i className="fa fa-github" ></i></a></li>
+                                <li className="social"><a href="https://www.linkedin.com/in/niranjan-sah/" target="_blank"><i className="fa ti-linkedin" ></i></a></li>
+                                <li className="social"><a href="https://www.instagram.com/niranjansah8790/" target="_blank"><i className="fa ti-instagram" ></i></a></li>
+                                <li className="social"><a href="https://github.com/niranjansah87" target="_blank"><i className="fa ti-github" ></i></a></li>
                             </ul>
                         </div>
 
@@ -104,9 +104,9 @@ const Team = () => {
                                 <h6>Technical Head</h6>
                             </div>
                             <ul className="socialul">
-                                <li className="social"><a href="https://in.linkedin.com/in/koushikreddyb" target="_blank"><i className="fa fa-linkedin" ></i></a></li>
-                                <li className="social"><a href="https://www.instagram.com/zap_zura/" target="_blank"><i className="fa fa-instagram" ></i></a></li>
-                                <li className="social"><a href="https://github.com/KoushikReddyB" target="_blank"><i className="fa fa-github" ></i></a></li>
+                                <li className="social"><a href="https://in.linkedin.com/in/koushikreddyb" target="_blank"><i className="fa ti-linkedin" ></i></a></li>
+                                <li className="social"><a href="https://www.instagram.com/zap_zura/" target="_blank"><i className="fa ti-instagram" ></i></a></li>
+                                <li className="social"><a href="https://github.com/KoushikReddyB" target="_blank"><i className="fa ti-github" ></i></a></li>
                             </ul>
                         </div>
 
@@ -117,9 +117,9 @@ const Team = () => {
                                 <h6>Non-Technical Head</h6>
                             </div>
                             <ul className="socialul">
-                                <li className="social"><a href="https://www.linkedin.com/in/nikhil-medamdravu-81216b222" target="_blank"><i className="fa fa-linkedin" ></i></a></li>
-                                <li className="social"><a href="https://www.instagram.com/nikhil_jai7/" target="_blank"><i className="fa fa-instagram" ></i></a></li>
-                                <li className="social"><a href="#"><i className="fa fa-github" ></i></a></li>
+                                <li className="social"><a href="https://www.linkedin.com/in/nikhil-medamdravu-81216b222" target="_blank"><i className="fa ti-linkedin" ></i></a></li>
+                                <li className="social"><a href="https://www.instagram.com/nikhil_jai7/" target="_blank"><i className="fa ti-instagram" ></i></a></li>
+                                <li className="social"><a href="#"><i className="fa ti-github" ></i></a></li>
                             </ul>
                         </div>
 
@@ -130,9 +130,9 @@ const Team = () => {
                                 <h6>Designing Head</h6>
                             </div>
                             <ul className="socialul">
-                                <li className="social"><a href="https://www.linkedin.com/in/snigdhasindhushamantha/" target="_blank"><i className="fa fa-linkedin"></i></a></li>
-                                <li className="social"><a href="https://www.instagram.com/_.sindhusha.03._/" target="_blank"><i className="fa fa-instagram"></i></a></li>
-                                <li className="social"><a href="#"><i className="fa fa-github"></i></a></li>
+                                <li className="social"><a href="https://www.linkedin.com/in/snigdhasindhushamantha/" target="_blank"><i className="fa ti-linkedin"></i></a></li>
+                                <li className="social"><a href="https://www.instagram.com/_.sindhusha.03._/" target="_blank"><i className="fa ti-instagram"></i></a></li>
+                                <li className="social"><a href="#"><i className="fa ti-github"></i></a></li>
                             </ul>
                         </div>
 
@@ -143,9 +143,9 @@ const Team = () => {
                                 <h6>Creative Head</h6>
                             </div>
                             <ul className="socialul">
-                                <li className="social"><a href="https://www.linkedin.com/in/hema-vardhan-velaga-999679226/" target="_blank"><i className="fa fa-linkedin"></i></a></li>
-                                <li className="social"><a href="https://www.instagram.com/mr.v_a_r_d_h_a_n/" target="_blank"><i className="fa fa-instagram" ></i></a></li>
-                                <li className="social"><a href="#" target="_blank"><i className="fa fa-github" ></i></a></li>
+                                <li className="social"><a href="https://www.linkedin.com/in/hema-vardhan-velaga-999679226/" target="_blank"><i className="fa ti-linkedin"></i></a></li>
+                                <li className="social"><a href="https://www.instagram.com/mr.v_a_r_d_h_a_n/" target="_blank"><i className="fa ti-instagram" ></i></a></li>
+                                <li className="social"><a href="#" target="_blank"><i className="fa ti-github" ></i></a></li>
                             </ul>
                         </div>
 
@@ -156,9 +156,9 @@ const Team = () => {
                                 <h6>Event Coordinator Head</h6>
                             </div>
                             <ul className="socialul">
-                                <li className="social"><a href="https://www.linkedin.com/in/musunuru-hari-kiran-0b8913226/" target="_blank"><i className="fa fa-linkedin"></i></a></li>
-                                <li className="social"><a href="https://www.instagram.com/harikiran_chowdary/" target="_blank"><i className="fa fa-instagram"></i></a></li>
-                                <li className="social"><a href="https://github.com/MHariKiran" target="_blank"><i className="fa fa-github" ></i></a></li>
+                                <li className="social"><a href="https://www.linkedin.com/in/musunuru-hari-kiran-0b8913226/" target="_blank"><i className="fa ti-linkedin"></i></a></li>
+                                <li className="social"><a href="https://www.instagram.com/harikiran_chowdary/" target="_blank"><i className="fa ti-instagram"></i></a></li>
+                                <li className="social"><a href="https://github.com/MHariKiran" target="_blank"><i className="fa ti-github" ></i></a></li>
                             </ul>
                         </div>
 
@@ -169,9 +169,9 @@ const Team = () => {
                                 <h6>Social Media</h6>
                             </div>
                             <ul className="socialul">
-                                <li className="social"><a href="https://www.linkedin.com/in/vahinipathi-rama-krishna-58565a150/" target="_blank"><i className="fa fa-linkedin" ></i></a></li>
-                                <li className="social"><a href="https://www.instagram.com/rama.krishna_07" target="_blank"><i className="fa fa-instagram" ></i></a></li>
-                                <li className="social"><a href="https://github.com/Vahinipathiramakrishna" target="_blank"><i className="fa fa-github" ></i></a></li>
+                                <li className="social"><a href="https://www.linkedin.com/in/vahinipathi-rama-krishna-58565a150/" target="_blank"><i className="fa ti-linkedin" ></i></a></li>
+                                <li className="social"><a href="https://www.instagram.com/rama.krishna_07" target="_blank"><i className="fa ti-instagram" ></i></a></li>
+                                <li className="social"><a href="https://github.com/Vahinipathiramakrishna" target="_blank"><i className="fa ti-github" ></i></a></li>
                             </ul>
                         </div>
 

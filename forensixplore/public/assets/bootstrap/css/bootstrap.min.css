@@ -186,6 +186,11 @@
   box-sizing: border-box;
 }
 
+.blog-container *,
+.blog-container ::after,
+.blog-container ::before {
+  box-sizing: content-box; /* Override the global box-sizing rule */
+}
 
 
 @media (prefers-reduced-motion: no-preference) {

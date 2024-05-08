@@ -2,7 +2,7 @@ import mithun from './img/team/Midhun sai Kothagundla.jpg'
 import khaja from './img/team/khaja.png'
 import sumanth from './img/team/sumanth.jpg'
 import niranjan from './img/team/niranjan.png'
-
+import { Link } from 'react-router-dom';
 const Team = () => {
   return (
     <section className="team_area section-padding">
@@ -13,7 +13,8 @@ const Team = () => {
               <span>Our team member</span>
               <h2>Meet our Dedicated Team members</h2>
               <p>Welcome to the Forensixplore Club, where cybersecurity and innovation unite! Our diverse team is dedicated to ethical hacking and safeguarding digital realms through collaboration and expertise. Join us in shaping a safer online world.</p>
-              <a href="./" className="btn_one">View all members <i className="ti-arrow-top-right"></i></a>
+              {/* <a href="" className="btn_one">View all members <i className="ti-arrow-top-right"></i></a> */}
+              <Link to="/team" className="btn_one">View all members <i className="ti-arrow-top-right"></i></Link>
             </div>
           </div>
           <div className="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">

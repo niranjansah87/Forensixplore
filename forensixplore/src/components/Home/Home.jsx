@@ -13,7 +13,6 @@ const Home = () => {
         <Navbar></Navbar>
         <HomeCounter></HomeCounter>
         <AboutUs></AboutUs>
-        
         <Services></Services>
         <Marquee></Marquee>
         <Core_Team></Core_Team>

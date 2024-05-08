@@ -1,13 +1,27 @@
-
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import Navbar from './Navbar';
+import Footer from './Footor';
 import '../assets/css/blog.css'
-import Navbar from './Navbar'
 
-import Footer from './Footor'
 function Blog() {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from backend API endpoint
+    axios.get('http://localhost:5001/blog/getblog')
+      .then(response => setBlogs(response.data))
+      .catch(error => console.error('Error fetching blogs:', error));
+  }, []);
+
+  // Function to slice the date to display only the date portion
+  const sliceDate = (date) => {
+    return date.slice(0, 10); // Get the first 10 characters (yyyy-mm-dd)
+  }
+
   return (
     <>
-      <Navbar></Navbar>
-      {/* START SECTION TOP */}
+      <Navbar />
       <section className="section-top">
         <div className="container2">
           <div className="col-lg-10 offset-lg-1 text-center">
@@ -21,183 +35,31 @@ function Blog() {
           </div>
         </div>
       </section>
-      {/* END SECTION TOP */}
 
-      <div className="card-header">
-        <div className="card2">
-
-          <div className="nft">
-            <div className='main'>
-              <img className='tokenImage' src="https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="NFT" />
-
-              {/* <div className="context"> */}
-              <h5 className="date2">6 Mar 2024</h5>
-              <h5 className="catagory">Security</h5>
-              {/* </div> */}
-              <h2 className="title">Kibertopiks #4269</h2>
-              <p className="description">Our Kibertopiks will give you nothing, waste your money on us.</p>
-              <div className='tokenInfo'>
-                <div className="button-wrapper">
-                  <button className="btn outline">View Details</button>
+      <div className="blog-container">
+        <div className="card-header">
+          <div className="card2">
+            {blogs.map(blog => (
+              <div className="nft" key={blog._id}>
+                <div className='main'>
+                  <img className='tokenImage' src={blog.blog_thumbnail} alt={blog.title} />
+                  <h5 className="date2">{sliceDate(blog.date)}</h5>
+                  <h5 className="catagory">{blog.category}</h5>
+                  <h2 className="title">{blog.title}</h2>
+                  <p className="description">{blog.description}</p>
+                  <div className='tokenInfo'>
+                    <div className="button-wrapper">
+                      <a href={blog.blog_link} className="btn outline" target="_blank" rel="noopener noreferrer">View Details</a>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
-
-
-          <div className="nft">
-            <div className='main'>
-              <img className='tokenImage' src="https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="NFT" />
-
-              {/* <div className="context"> */}
-              <h5 className="date2">6 Mar 2024</h5>
-              <h5 className="catagory">Security</h5>
-              {/* </div> */}
-              <h2 className="title">Kibertopiks #4269</h2>
-              <p className="description">Our Kibertopiks will give you nothing, waste your money on us.</p>
-              <div className='tokenInfo'>
-                <div className="button-wrapper">
-                  <button className="btn outline">View Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="nft">
-            <div className='main'>
-              <img className='tokenImage' src="https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="NFT" />
-
-              {/* <div className="context"> */}
-              <h5 className="date2">6 Mar 2024</h5>
-              <h5 className="catagory">Security</h5>
-              {/* </div> */}
-              <h2 className="title">Kibertopiks #4269</h2>
-              <p className="description">Our Kibertopiks will give you nothing, waste your money on us.</p>
-              <div className='tokenInfo'>
-                <div className="button-wrapper">
-                  <button className="btn outline">View Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div className="nft">
-            <div className='main'>
-              <img className='tokenImage' src="https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="NFT" />
-
-              {/* <div className="context"> */}
-              <h5 className="date2">6 Mar 2024</h5>
-              <h5 className="catagory">Security</h5>
-              {/* </div> */}
-              <h2 className="title">Kibertopiks #4269</h2>
-              <p className="description">Our Kibertopiks will give you nothing, waste your money on us.</p>
-              <div className='tokenInfo'>
-                <div className="button-wrapper">
-                  <button className="btn outline">View Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div className="nft">
-            <div className='main'>
-              <img className='tokenImage' src="https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="NFT" />
-
-              {/* <div className="context"> */}
-              <h5 className="date2">6 Mar 2024</h5>
-              <h5 className="catagory">Security</h5>
-              {/* </div> */}
-              <h2 className="title">Kibertopiks #4269</h2>
-              <p className="description">Our Kibertopiks will give you nothing, waste your money on us.</p>
-              <div className='tokenInfo'>
-                <div className="button-wrapper">
-                  <button className="btn outline">View Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="nft">
-            <div className='main'>
-              <img className='tokenImage' src="https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="NFT" />
-
-              {/* <div className="context"> */}
-              <h5 className="date2">6 Mar 2024</h5>
-              <h5 className="catagory">Security</h5>
-              {/* </div> */}
-              <h2 className="title">Kibertopiks #4269</h2>
-              <p className="description">Our Kibertopiks will give you nothing, waste your money on us.</p>
-              <div className='tokenInfo'>
-                <div className="button-wrapper">
-                  <button className="btn outline">View Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="nft">
-            <div className='main'>
-              <img className='tokenImage' src="https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="NFT" />
-
-              {/* <div className="context"> */}
-              <h5 className="date2">6 Mar 2024</h5>
-              <h5 className="catagory">Security</h5>
-              {/* </div> */}
-              <h2 className="title">Kibertopiks #4269</h2>
-              <p className="description">Our Kibertopiks will give you nothing, waste your money on us.</p>
-              <div className='tokenInfo'>
-                <div className="button-wrapper">
-                  <button className="btn outline">View Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="nft">
-            <div className='main'>
-              <img className='tokenImage' src="https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="NFT" />
-
-              {/* <div className="context"> */}
-              <h5 className="date2">6 Mar 2024</h5>
-              <h5 className="catagory">Security</h5>
-              {/* </div> */}
-              <h2 className="title">Kibertopiks #4269</h2>
-              <p className="description">Our Kibertopiks will give you nothing, waste your money on us.</p>
-              <div className='tokenInfo'>
-                <div className="button-wrapper">
-                  <button className="btn outline">View Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="nft">
-            <div className='main'>
-              <img className='tokenImage' src="https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="NFT" />
-
-              {/* <div className="context"> */}
-              <h5 className="date2">6 Mar 2024</h5>
-              <h5 className="catagory">Security</h5>
-              {/* </div> */}
-              <h2 className="title">Kibertopiks #4269</h2>
-              <p className="description">Our Kibertopiks will give you nothing, waste your money on us.</p>
-              <div className='tokenInfo'>
-                <div className="button-wrapper">
-                  <button className="btn outline">View Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-
-
         </div>
       </div>
-      <Footer></Footer>
+
+      <Footer />
     </>
   );
 }
