@@ -7,13 +7,13 @@
 // import About from "./components/About"
 import Blog from "./components/Blog"
 function App() {
-  
+
 
   return (
     <>
-    {/* <About></About> */}
+      {/* <About></About> */}
       {/* <Navbar></Navbar> */}
-     {/* <Footer></Footer> */}
+      {/* <Footer></Footer> */}
       {/* <Team></Team> */}
       {/* <Home></Home> */}
       <Blog></Blog>

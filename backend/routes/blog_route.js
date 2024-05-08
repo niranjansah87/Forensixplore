@@ -6,7 +6,7 @@ const { body, validationResult } = require("express-validator");
 const sanitizeHtml = require("sanitize-html");
 
 // Route 1: Create a blog using POST "/api/blog/createblog". Login required
-router.post("/createblog", 
+router.post("/createblog",
     [
         fetchuser,
         body("title", "Title is required").notEmpty(),
@@ -14,7 +14,7 @@ router.post("/createblog",
         body("category", "Category is required").notEmpty(),
         body("blog_thumbnail", "Thumbnail URL is required").notEmpty().isURL(),
         body("blog_link", "Blog link is required").notEmpty().isURL(),
-    ], 
+    ],
     async (req, res) => {
         try {
             const errors = validationResult(req);
@@ -51,7 +51,7 @@ router.post("/createblog",
 );
 
 // Route 2: Update a blog using PUT "/api/blog/updateblog". Login required
-router.put("/updateblog", 
+router.put("/updateblog",
     [
         fetchuser,
         body("title", "Title is required").notEmpty(),
@@ -59,7 +59,7 @@ router.put("/updateblog",
         body("category", "Category is required").notEmpty(),
         body("blog_thumbnail", "Thumbnail URL is required").notEmpty().isURL(),
         body("blog_link", "Blog link is required").notEmpty().isURL(),
-    ], 
+    ],
     async (req, res) => {
         try {
             const errors = validationResult(req);
@@ -90,11 +90,11 @@ router.put("/updateblog",
 );
 
 // Route 3: Delete a blog using DELETE "/api/blog/deleteblog". Login required
-router.delete("/deleteblog", 
+router.delete("/deleteblog",
     [
         fetchuser,
         body("title", "Title is required").notEmpty()
-    ], 
+    ],
     async (req, res) => {
         try {
             const errors = validationResult(req);
@@ -139,11 +139,11 @@ router.get("/getblog/:id", async (req, res) => {
 });
 
 // Route 6: Get a blog using POST "/api/blog/getblog" by title. Login required
-router.post("/getblog", 
+router.post("/getblog",
     [
         fetchuser,
         body("title", "Title is required").notEmpty()
-    ], 
+    ],
     async (req, res) => {
         try {
             const errors = validationResult(req);

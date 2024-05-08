@@ -12,7 +12,7 @@ const futureEventsSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        enum: ['TEC', 'HWB', 'ESO','LCH','IIE'],
+        enum: ['TEC', 'HWB', 'ESO', 'LCH', 'IIE'],
         default: 'TEC',
         required: true,
     },

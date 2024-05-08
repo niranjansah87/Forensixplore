@@ -24,7 +24,7 @@ const sendSignupEmail = async (email, name, ID_NO) => {
     console.log("Signup confirmation email sent successfully");
   } catch (error) {
     console.error("Error sending signup confirmation email:", error);
-    throw error; 
+    throw error;
   }
 };
 

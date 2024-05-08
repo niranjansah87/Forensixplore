@@ -6,18 +6,18 @@ import niranjan from './img/team/niranjan.png'
 const Team = () => {
   return (
     <section className="team_area section-padding">
-      <div className="container">													
-        <div className="row">													
+      <div className="container">
+        <div className="row">
           <div className="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
             <div className="section-title">
               <span>Our team member</span>
               <h2>Meet our Dedicated Team members</h2>
               <p>Welcome to the Forensixplore Club, where cybersecurity and innovation unite! Our diverse team is dedicated to ethical hacking and safeguarding digital realms through collaboration and expertise. Join us in shaping a safer online world.</p>
               <a href="./" className="btn_one">View all members <i className="ti-arrow-top-right"></i></a>
-            </div>					
+            </div>
           </div>
-          <div className="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">	
-            <div className="row">								
+          <div className="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+            <div className="row">
               <div className="col-lg-6 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
                 <div className="single_team">
                   <img src={mithun} className="img-fluid2" alt="image" />

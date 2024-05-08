@@ -1,86 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./assets/img/forensixplore favicon.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="./assets/img/forensixplore favicon.png"
+      type="image/x-icon"
+    />
     <title>Forensixplore</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
 
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">		
-		<!-- Google Font -->
-		<link href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"> 
-		<!-- Font Awesome CSS -->
-		<link rel="stylesheet" href="assets/fonts/fontawesome.min.css">
-		<link rel="stylesheet" href="assets/fonts/themify-icons.css">
-		<!--- owl carousel Css-->
-		<link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.css">
-		<link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.css">	
-		<!--jquery-simple-mobilemenu Css-->
-        <link rel="stylesheet" href="assets/css/jquery-simple-mobilemenu.css">			
-		<!-- MAGNIFIC CSS -->
-		<link rel="stylesheet" href="assets/css/magnific-popup.css">		
-		<!-- animate CSS -->
-		<link rel="stylesheet" href="assets/css/animate.css">	
-		<!-- Style CSS -->					
-		<link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="assets/fonts/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/fonts/themify-icons.css" />
+    <!--- owl carousel Css-->
+    <link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.css" />
+    <link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.css" />
+    <!--jquery-simple-mobilemenu Css-->
+    <link rel="stylesheet" href="assets/css/jquery-simple-mobilemenu.css" />
+    <!-- MAGNIFIC CSS -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css" />
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <div class="loader">
-			<video autoplay muted id="loader-video">
-			  <source src="./assets/loader.mp4" type="video/mp4">
-			</video>
-		  </div>
-		  <div id="content" style="display: none;">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+      <video autoplay muted id="loader-video">
+        <source src="./assets/loader.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div id="content" style="display: none">
+      <div id="root"></div>
+      <script type="module" src="/src/main.jsx"></script>
     </div>
 
-
-
-
     <!-- Latest jQuery -->
-		<script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
     <!-- Latest compiled and minified Bootstrap -->
-      <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <!-- modernizer JS -->		
-      <script src="assets/js/modernizr-2.8.3.min.js"></script>	
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- modernizer JS -->
+    <script src="assets/js/modernizr-2.8.3.min.js"></script>
     <!-- jquery-simple-mobilemenu.min -->
-      <script src="assets/js/jquery-simple-mobilemenu.js"></script>		
+    <script src="assets/js/jquery-simple-mobilemenu.js"></script>
     <!-- owl-carousel min js  -->
-      <script src="assets/owlcarousel/js/owl.carousel.min.js"></script>					
-    <!-- magnific-popup js -->               
-      <script src="assets/js/jquery.magnific-popup.min.js"></script>						
+    <script src="assets/owlcarousel/js/owl.carousel.min.js"></script>
+    <!-- magnific-popup js -->
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <!-- countTo js -->
-      <script src="assets/js/jquery.inview.min.js"></script>					
+    <script src="assets/js/jquery.inview.min.js"></script>
     <!-- stellar js -->
-        
+
     <!-- scrolltopcontrol js -->
-      <script src="assets/js/scrolltopcontrol.js"></script>	
-    <!-- jquery.bubble js -->	
-      <script src="assets/js/superMarquee.min.js"></script>			
+    <script src="assets/js/scrolltopcontrol.js"></script>
+    <!-- jquery.bubble js -->
+    <script src="assets/js/superMarquee.min.js"></script>
     <!-- WOW - Reveal Animations When You Scroll -->
-      <script src="assets/js/wow.min.js"></script>				
+    <script src="assets/js/wow.min.js"></script>
     <!-- scripts js -->
-      <script src="assets/js/scripts.js"></script>
-
-
+    <script src="assets/js/scripts.js"></script>
 
     <script>
-			window.addEventListener('DOMContentLoaded', () => {
-			  const loaderVideo = document.getElementById('loader-video');
-			  const content = document.getElementById('content');
-		  
-			  // Add event listener to hide loader and show content when video ends
-			  loaderVideo.addEventListener('ended', () => {
-				const loader = document.querySelector('.loader');
-				loader.style.display = 'none'; // Hide loader
-				content.style.display = 'block'; // Show content
-			  });
-			});
-			
-			
-		  </script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const loaderVideo = document.getElementById("loader-video");
+        const content = document.getElementById("content");
+
+        // Add event listener to hide loader and show content when video ends
+        loaderVideo.addEventListener("ended", () => {
+          const loader = document.querySelector(".loader");
+          loader.style.display = "none"; // Hide loader
+          content.style.display = "block"; // Show content
+        });
+      });
+    </script>
   </body>
 </html>

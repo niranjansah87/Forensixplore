@@ -6,14 +6,14 @@ const { body, validationResult } = require("express-validator");
 const sanitizeHtml = require("sanitize-html");
 
 // Route 1: Create a past event using POST "/event/createpastevent". Login required
-router.post("/createpastevent", 
+router.post("/createpastevent",
     [
         fetchuser,
         body("title", "Title is required").notEmpty(),
         body("category", "Category is required").notEmpty().isIn(['TEC', 'HWB', 'ESO', 'LCH', 'IIE']),
         body("eventPoster", "Event poster URL is required").notEmpty().isURL(),
         body("registrationLink", "Registration link must be a valid URL").optional().isURL(),
-    ], 
+    ],
     async (req, res) => {
         try {
             const errors = validationResult(req);
@@ -49,14 +49,14 @@ router.post("/createpastevent",
 );
 
 // Route 2: Update a past event using PUT "/event/updatepastevent/:id". Login required
-router.put("/updatepastevent/:id", 
+router.put("/updatepastevent/:id",
     [
         fetchuser,
         body("title", "Title is required").notEmpty(),
         body("category", "Category is required").notEmpty().isIn(['TEC', 'HWB', 'ESO', 'LCH', 'IIE']),
         body("eventPoster", "Event poster URL is required").notEmpty().isURL(),
         body("registrationLink", "Registration link must be a valid URL").optional().isURL(),
-    ], 
+    ],
     async (req, res) => {
         try {
             const errors = validationResult(req);
@@ -88,8 +88,8 @@ router.put("/updatepastevent/:id",
 );
 
 // Route 3: Delete a past event using DELETE "/event/deletepastevent/:id". Login required
-router.delete("/deletepastevent/:id", 
-    fetchuser, 
+router.delete("/deletepastevent/:id",
+    fetchuser,
     async (req, res) => {
         try {
             const deletedEvent = await Event.findByIdAndDelete(req.params.id);
@@ -103,8 +103,8 @@ router.delete("/deletepastevent/:id",
 );
 
 // Route 4: Get all past events using GET "/event/getpastevents". Login required
-router.get("/getpastevents", 
-    fetchuser, 
+router.get("/getpastevents",
+    fetchuser,
     async (req, res) => {
         try {
             const pastEvents = await Event.find();
@@ -117,8 +117,8 @@ router.get("/getpastevents",
 );
 
 // Route 5: Get a past event by ID using GET "/event/getpastevent/:id". Login required
-router.get("/getpastevent/:id", 
-    fetchuser, 
+router.get("/getpastevent/:id",
+    fetchuser,
     async (req, res) => {
         try {
             const pastEvent = await Event.findById(req.params.id);

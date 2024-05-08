@@ -8,7 +8,7 @@ const fetchuser = require("../middleware/fetchuser.js");
 const FutureEvent = require("../models/future_events");
 
 // Route 1: Create a future event using POST "/event/createfutureevent". Login required
-router.post("/createfutureevent", 
+router.post("/createfutureevent",
     [
         fetchuser,
         body("title", "Title is required").notEmpty(),
@@ -16,7 +16,7 @@ router.post("/createfutureevent",
         body("category", "Category is required").notEmpty().isIn(['TEC', 'HWB', 'ESO', 'LCH', 'IIE']),
         body("eventPoster", "Event poster URL is required").notEmpty().isURL(),
         body("registrationLink", "Registration link must be a valid URL").optional().isURL(),
-    ], 
+    ],
     async (req, res) => {
         try {
             const errors = validationResult(req);
@@ -49,7 +49,7 @@ router.post("/createfutureevent",
 );
 
 // Route 2: Update a future event using PUT "/event/updatefutureevent/:id". Login required
-router.put("/updatefutureevent/:id", 
+router.put("/updatefutureevent/:id",
     [
         fetchuser,
         param("id", "Invalid event ID").isMongoId(),
@@ -58,7 +58,7 @@ router.put("/updatefutureevent/:id",
         body("category", "Category is required").notEmpty().isIn(['TEC', 'HWB', 'ESO', 'LCH', 'IIE']),
         body("eventPoster", "Event poster URL is required").notEmpty().isURL(),
         body("registrationLink", "Registration link must be a valid URL").optional().isURL(),
-    ], 
+    ],
     async (req, res) => {
         try {
             const errors = validationResult(req);
@@ -92,11 +92,11 @@ router.put("/updatefutureevent/:id",
 );
 
 // Route 3: Delete a future event using DELETE "/event/deletefutureevent/:id". Login required
-router.delete("/deletefutureevent/:id", 
+router.delete("/deletefutureevent/:id",
     [
         fetchuser,
         param("id", "Invalid event ID").isMongoId(),
-    ], 
+    ],
     async (req, res) => {
         try {
             const errors = validationResult(req);
@@ -128,7 +128,7 @@ router.get("/getfutureevents", async (req, res) => {
 });
 
 // Route 5: Get a future event by ID using GET "/event/getfutureevent/:id". Login required
-router.get("/getfutureevent/:id", 
+router.get("/getfutureevent/:id",
     [
         fetchuser,
         param("id", "Invalid event ID").isMongoId(),

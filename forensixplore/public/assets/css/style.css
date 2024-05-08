@@ -1608,6 +1608,11 @@ blockquote::before,
   color: #18fef5;
 }
 
+.single-footor2::after,
+.single-footor2::before {
+  box-sizing: border-box;
+  /* Add any styles for the pseudo-elements here */
+}
 
 
 
@@ -1653,7 +1658,6 @@ blockquote::before,
   }
  
 }
-
 
 
 

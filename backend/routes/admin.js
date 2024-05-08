@@ -61,7 +61,7 @@ router.post(
       const authToken = jwt.sign(data, JWT_SECRET);
       console.log(authToken);
       // Send signup confirmation email with OTP
-      await sendSignupEmail(req.body.email,req.body.name, req.body.ID_NO);
+      await sendSignupEmail(req.body.email, req.body.name, req.body.ID_NO);
       res.json({ message: "Signup confirmation email sent successfully", authToken });
     } catch (error) {
       console.error(error);
@@ -214,7 +214,7 @@ router.post(
         },
       };
 
-      const authToken = jwt.sign(data, JWT_SECRET,{
+      const authToken = jwt.sign(data, JWT_SECRET, {
         expiresIn: '1h', // Token expiration time
       });
       console.log(authToken);
@@ -273,15 +273,15 @@ router.post("/forgotpassword", async (req, res) => {
           pass: EMAIL_PASS
         }
       });
-      
+
       var mailOptions = {
-        from:"Forensixplore Team <sahn0075@gmail.com>",
+        from: "Forensixplore Team <sahn0075@gmail.com>",
         to: user.email,
         subject: 'Forensixplore Reset Password',
         text: `Subject: Forensixplore Reset Password \n\nDear User,\n\nYou have requested to reset your password. Please click on the following link to reset your password:\n\n[Reset Password](${link}) \n\nIf you did not request this password reset, please ignore this email.\n\nThank you,\nForensixplore Team`
       };
-      
-      transporter.sendMail(mailOptions, function(error, info){
+
+      transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
           console.log(error);
         } else {
@@ -320,7 +320,7 @@ router.post('/resetpassword/:id/:token', async (req, res) => {
 
   const { id, token } = req.params;
   const password = req.body.password;
-  
+
   const user = await User.findOne({ _id: id });
   if (!user) {
     return res.status(400).json({ error: 'User with this email does not exist' });
@@ -330,7 +330,7 @@ router.post('/resetpassword/:id/:token', async (req, res) => {
       if (!password) {
         return res.status(400).json({ error: 'Password cannot be empty' });
       }
-      
+
       const isPasswordMatch = await bcrypt.compare(password, user.password);
       if (isPasswordMatch) {
         return res.status(400).json({ error: 'New password cannot be the same as the old password' });
@@ -339,18 +339,18 @@ router.post('/resetpassword/:id/:token', async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, salt);
         await User.updateOne(
           {
-             _id: id 
-            }, { 
-              $set: { 
-                password: hashedPassword 
-              } 
-            });
-            res.json({ message: 'Password reset successful' });
+            _id: id
+          }, {
+          $set: {
+            password: hashedPassword
           }
+        });
+        res.json({ message: 'Password reset successful' });
+      }
     } catch (error) {
       console.error(error);
       res.status(401).json({ error: 'Token expired. Please try again' });
-      
+
     }
 
   }
