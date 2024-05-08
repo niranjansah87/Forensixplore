@@ -12,6 +12,7 @@ import hari from '../assets/img/team/hari.jpg'
 import rama from '../assets/img/team/rama.jpg'
 import Footer from './Footor'
 import Navbar from './Navbar'
+import { Link } from 'react-router-dom'
 import '../assets/css/team.css'
 
 
@@ -29,7 +30,7 @@ const Team = () => {
                             <div className="section-top-title wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
                                 <h1>Our Team</h1>
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><Link to="/">Home</Link></li>
                                     <li> / Team</li>
                                 </ul>
                             </div>

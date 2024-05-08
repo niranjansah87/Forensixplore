@@ -1,5 +1,5 @@
 // import '../index.css';
-
+import { Link } from 'react-router-dom';
 import logo from '../assets/img/forensixplore.png';
 import section2 from '../assets/img/bg/section-2.jpg';
 
@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="row">
           <div className="col-lg-3 col-sm-6 col-xs-12">
             <div className="single_footer">
-              <a href="#"><img src={logo} alt="club logo" style={{ marginLeft: "-10px" }} /></a>
+              <Link to="/"><img src={logo} alt="club logo" style={{ marginLeft: "-10px" }} /> </Link>
               <p>Forensixplore&apos;s goal is to foster a community of cybersecurity enthusiasts skilled in forensic exploration, promoting ethical problem-solving in the digital realm.</p>
               <div className="social_profile">
                 <ul>
@@ -26,12 +26,11 @@ const Footer = () => {
             <div className="single_footer3" style={{ marginTop: "50px", marginLeft: "80px" }}>
               <h4>About Club</h4>
               <ul>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Our Events</a></li>
-                <li><a href="#">Blog & news</a></li>
-                <li><a href="#">Our Team</a></li>
-                <li><a href="#">Asked Question</a></li>
-                <li><a href="#">Contact us</a></li>
+                <li><Link to="/about">About us</Link></li>
+                <li><Link to="/">Our Events</Link></li>
+                <li><Link to="/blog">Blog & news</Link></li>
+                <li><Link to="/team">Our Team</Link></li>
+                <li><Link to="/">Asked Question</Link></li>
               </ul>
             </div>
           </div>

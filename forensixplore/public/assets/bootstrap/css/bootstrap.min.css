@@ -180,11 +180,11 @@
   --bs-border-color: #495057;
   --bs-border-color-translucent: rgba(255, 255, 255, 0.15);
 }
-/* *,
+*,
 ::after,
 ::before {
   box-sizing: border-box;
-} */
+}
 
 
 

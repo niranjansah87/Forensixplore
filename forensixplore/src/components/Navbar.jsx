@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'; // Import Link component
 
 import logo from '../assets/img/forensixplore.png';
 
@@ -8,38 +9,41 @@ const Navbar = () => {
         <div className="row">
           <div className="col-20 align-self-center">
             <div className="site-logo">
-              <a href="/"><img src={logo} alt="Forensixplore" /></a>
+              {/* Use Link instead of anchor tag */}
+              <Link to="/"><img src={logo} alt="Forensixplore" /></Link>
             </div>
           </div>
           <div className="col-60 d-flex justify-content-center">
             <nav id="main-menu">
               <ul>
-                <li className="menu-item-has-children"><a href="/">Home</a></li>
-                <li className="menu-item-has-children"><a href="/">About</a></li>
+                {/* Use Link for navigation */}
+                <li className="menu-item-has-children"><Link to="/">Home</Link></li>
+                <li className="menu-item-has-children"><Link to="/about">About</Link></li>
                 <li className="menu-item-has-children">
-                  <a href="/">Events</a>
+                  <Link to="/">Events</Link>
                   <ul>
-                    <li><a href="/">Past Events</a></li>
-                    <li><a href="/">Upcoming Events</a></li>
+                    <li><Link to="/">Past Events</Link></li>
+                    <li><Link to="/">Upcoming Events</Link></li>
                   </ul>
                 </li>
-                <li className="menu-item-has-children"><a href="/">Team</a></li>
-                <li className="menu-item-has-children"><a href="/">Blog</a></li>
+                <li className="menu-item-has-children"><Link to="/team">Team</Link></li>
+                <li className="menu-item-has-children"><Link to="/blog">Blog</Link></li>
               </ul>
             </nav>
           </div>
+          {/* Mobile Menu */}
           <ul className="mobile_menu">
-            <li className="menu-item-has-children"><a href="/">Home</a></li>
-            <li className="menu-item-has-children"><a href="/">About</a></li>
+            <li className="menu-item-has-children"><Link to="/">Home</Link></li>
+            <li className="menu-item-has-children"><Link to="/about">About</Link></li>
             <li className="menu-item-has-children">
-              <a href="/">Events</a>
+              <Link to="/">Events</Link>
               <ul>
-                <li><a href="/">Past Events</a></li>
-                <li><a href="/">Upcoming Events</a></li>
+                <li><Link to="/">Past Events</Link></li>
+                <li><Link to="/">Upcoming Events</Link></li>
               </ul>
             </li>
-            <li className="menu-item-has-children"><a href="/">Team</a></li>
-            <li className="menu-item-has-children"><a href="/">Blog</a></li>
+            <li className="menu-item-has-children"><Link to="/team">Team</Link></li>
+            <li className="menu-item-has-children"><Link to="/blog">Blog</Link></li>
           </ul>
         </div>
       </div>
