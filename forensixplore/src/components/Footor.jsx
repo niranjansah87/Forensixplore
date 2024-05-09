@@ -27,7 +27,8 @@ const Footer = () => {
               <h4>About Club</h4>
               <ul>
                 <li><Link to="/about">About us</Link></li>
-                <li><Link to="/">Our Events</Link></li>
+                <li><Link to="/past">Past Events</Link></li>
+                <li><Link to="/future">Future Events</Link></li>
                 <li><Link to="/blog">Blog & news</Link></li>
                 <li><Link to="/team">Our Team</Link></li>
                 <li><Link to="/">Asked Question</Link></li>

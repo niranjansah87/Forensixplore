@@ -11,6 +11,7 @@ router.post("/createpastevent",
         fetchuser,
         body("title", "Title is required").notEmpty(),
         body("category", "Category is required").notEmpty().isIn(['TEC', 'HWB', 'ESO', 'LCH', 'IIE']),
+        
         body("eventPoster", "Event poster URL is required").notEmpty().isURL(),
         body("registrationLink", "Registration link must be a valid URL").optional().isURL(),
     ],
@@ -21,7 +22,7 @@ router.post("/createpastevent",
                 return res.status(400).json({ errors: errors.array() });
             }
 
-            const { title, category, eventPoster, registrationLink } = req.body;
+            const { title, category, description,eventPoster, registrationLink } = req.body;
             // Check if past event with the same title already exists
             const existingEvent = await Event.findOne({ title });
             if (existingEvent) {
@@ -35,6 +36,7 @@ router.post("/createpastevent",
             const newEvent = new Event({
                 title: sanitizedTitle,
                 category: sanitizedCategory,
+                description,
                 eventPoster,
                 registrationLink
             });
@@ -104,7 +106,7 @@ router.delete("/deletepastevent/:id",
 
 // Route 4: Get all past events using GET "/event/getpastevents". Login required
 router.get("/getpastevents",
-    fetchuser,
+    
     async (req, res) => {
         try {
             const pastEvents = await Event.find();
@@ -118,7 +120,7 @@ router.get("/getpastevents",
 
 // Route 5: Get a past event by ID using GET "/event/getpastevent/:id". Login required
 router.get("/getpastevent/:id",
-    fetchuser,
+    
     async (req, res) => {
         try {
             const pastEvent = await Event.findById(req.params.id);

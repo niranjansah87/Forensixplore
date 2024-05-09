@@ -16,6 +16,12 @@ const futureEventsSchema = new mongoose.Schema({
         default: 'TEC',
         required: true,
     },
+    description: {
+        type: String,
+        
+        default: 'This event is conducted by forensixplore club of department of CSIT. This Events is under SIL',
+        required: false,
+    },
     eventPoster: {
         type: String,
         required: true,

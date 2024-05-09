@@ -24,7 +24,7 @@ router.post("/createfutureevent",
                 return res.status(400).json({ errors: errors.array() });
             }
 
-            const { title, date, category, eventPoster, registrationLink } = req.body;
+            const { title, date, category,description, eventPoster, registrationLink } = req.body;
 
             // Sanitize user inputs
             const sanitizedTitle = sanitizeHtml(title);
@@ -35,6 +35,7 @@ router.post("/createfutureevent",
                 title: sanitizedTitle,
                 date,
                 category: sanitizedCategory,
+                description,
                 eventPoster,
                 registrationLink
             });
