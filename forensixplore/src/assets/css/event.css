@@ -21,8 +21,8 @@
   border: 0px solid aqua;
   margin: 0.5rem;
   position: relative;
-  height: 13rem; /* Fixed height for the card */
-  width: 300px; /* Fixed width for the card */
+  height: 12rem; /* Fixed height for the card */
+  width: 290px; /* Fixed width for the card */
   overflow: hidden;
   border-radius: 0.5rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
@@ -85,11 +85,19 @@
 }
 
 .news-card__post-date {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   margin-bottom: 0.5rem;
   color: #ccc;
 }
 
+.news-card__catagory {
+  margin-top: -36px;
+  margin-left: 220px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  /* margin-bottom: -19px; */
+  color: #ccc;
+}
 .news-card__details-wrapper {
   max-height: 0;
   opacity: 0;
