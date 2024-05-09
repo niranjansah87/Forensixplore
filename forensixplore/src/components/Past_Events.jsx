@@ -44,6 +44,7 @@ function Past_Events() {
             <div className="news-card__text-wrapper">
               <h2 className="news-card__title">{event.title}</h2>
               <div className="news-card__post-date">{event.date.slice(0, 10)}</div>
+              <div className="news-card__catagory">{event.category}</div>
               <div className="news-card__details-wrapper">
                 <p className="news-card__excerpt">{event.description}</p>
                 <a href={event.registrationLink} className="news-card__read-more">

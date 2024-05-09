@@ -92,6 +92,13 @@ body {
   color: #ccc;
 }
 
+.news-card__catagory {
+  margin-top: -23px;
+  margin-left: 185px;
+  font-size: 0.7rem;
+  /* margin-bottom: -19px; */
+  color: #ccc;
+}
 .news-card__details-wrapper {
   max-height: 0;
   opacity: 0;
