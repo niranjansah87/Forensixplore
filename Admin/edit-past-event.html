@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNDEREMPLOYED</title>
+    <!-- CUSTOM STYLESHEET -->
+    <link rel="stylesheet" href="./css/admin.css">
+    <!-- ICONSCOUT CDN -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- GOOGLE FONT(MONTSERATE) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,800;1,700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+
+
+
+
+<section class="form__section">
+
+    <div class="container form__section-container">
+        <h2>Edit Past Events</h2>
+        <form action="" enctype="multipart/form-data">
+            <label>Title</label>
+            <input type="text" placeholder="Enter the Title " name="title">
+            <label >Date</label>
+            <input type="date" placeholder="Select the Date" name="date">
+            <label>Catagory</label>
+            <select name="category" >
+                <option name="TEC" value="1">TEC</option>
+                <option name="HWB" value="1">HWB</option>
+                <option name="IIE" value="1">IIE</option>
+                <option name="ESO" value="1">ESO</option>
+                <option name="LCH" value="1">LCH</option>
+            </select>
+            <label>Description</label>
+            <textarea  rows="6" placeholder="Enter the Description" name="description"></textarea>
+            
+            <div class="form__control">
+                <label for="thumbnail">Event Poster</label>
+                <input type="file" id="thumbnail" name="eventPoster">
+            </div>
+            <label>Registration Link</label>
+            <input type="text" placeholder="Enter the Registration Link" name="registrationLink">
+            <button type="submit" class="btn">Add Event</button>
+        </form>
+    </div>
+
+
+    
+
+</section>
+
+
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
+
+

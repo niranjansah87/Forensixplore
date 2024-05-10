@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNDEREMPLOYED</title>
+    <!-- CUSTOM STYLESHEET -->
+    <link rel="stylesheet" href="./css/admin.css">
+    <!-- ICONSCOUT CDN -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- GOOGLE FONT(MONTSERATE) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,800;1,700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+
+
+
+
+    <section class="dashboard">
+        <div class="container dashboard__container">
+    
+            <button id="show__sidebar-btn" class="sidebar__toggle"><i class="uil uil-angle-right-b"></i></button>
+            <button id="hide__sidebar-btn" class="sidebar__toggle"><i class="uil uil-angle-left-b"></i></button>
+    
+            <aside>
+                <ul>
+                    <li>
+                        <a href="./add-blog.html">
+                            <i class="uil uil-pen"></i>
+                            <h5>Add Post</h5>
+                        </a>
+                    </li>                
+                        
+                    <li>
+                        <a href="dashboard.html"  >
+                            <i class="uil uil-postcard"></i>
+                            <h5>Manage Blog</h5>
+                        </a>
+                    </li>
+    
+                    <li>
+                        <a href="add-user.html">
+                            <i class="uil uil-user-plus"></i> 
+                            <h5>Add User</h5>
+                        </a>
+                    </li>  
+    
+                    <li>
+                        <a href="manage-users.html">
+                            <i class="uil uil-users-alt"></i>
+                            <h5>Manage Users</h5>
+                        </a>
+                    </li>                    
+                    <li>
+                        <a href="./add-past-events.html">
+                            <i class="uil uil-edit"></i>
+                            <h5>Add Past Event</h5>
+                        </a>
+                    </li>                    
+                    <li>
+                        <a href="./manage-past-events.html" class="active" >
+                            <i class="uil uil-list-ul"></i>
+                            <h5>Manage Past Events</h5>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./add-future-events.html">
+                            <i class="uil uil-edit"></i>
+                            <h5>Add Future Events</h5>
+                        </a>
+                    </li>                    
+                    <li>
+                        <a href="./manage-future-events.html"  >
+                            <i class="uil uil-list-ul"></i>
+                            <h5>Manage Future Events</h5>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <main>
+                <h2>Manage Past Events</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Travel</td>
+                            <td><a href="./edit-past-event.html" class="btn sm">Edit</a></td>
+                            <td><a href="delete-category.html" class="btn sm danger">Delete</a></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </main>
+        </div>
+    </section>
+<script src="./js/main.js"></script>
+    </body>
+    </html>
+    
+    
+    
