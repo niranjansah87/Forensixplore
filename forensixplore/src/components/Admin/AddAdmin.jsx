@@ -1,6 +1,6 @@
 import AdminNavbar from './Admin_Navbar';
 import Footer from '../Footor';
-
+import './assets/css/admin.css'
 function AddAdmin() {
     return (
         <>

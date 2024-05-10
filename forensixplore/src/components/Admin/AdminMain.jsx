@@ -1,4 +1,4 @@
-
+import './assets/css/admin.css'
 import { Link } from 'react-router-dom';
 import AdminNavbar from './Admin_Navbar';
 import Footor from '../Footor';

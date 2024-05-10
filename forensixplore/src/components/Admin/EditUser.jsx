@@ -1,6 +1,7 @@
 
 import AdminNavbar from './Admin_Navbar';
 import Footor from '../Footor';
+import './assets/css/admin.css'
 function EditUser() {
     return (
         <>

@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import AdminNavbar from './Admin_Navbar';
 import Footor from '../Footor';
+import './assets/css/admin.css'
 function ManagePastEvents() {
     return (
         <>
@@ -77,8 +78,8 @@ function ManagePastEvents() {
                         <tbody>
                             <tr>
                                 <td>Travel</td>
-                                <td><Link to="./edit-past-event.html" className="btn sm">Edit</Link></td>
-                                <td><Link to="delete-category.html" className="btn sm danger">Delete</Link></td>
+                                <td><Link to="/edit-past" className="btn sm">Edit</Link></td>
+                                <td><Link to="#" className="btn sm danger">Delete</Link></td>
                             </tr>
                         </tbody>
                     </table>

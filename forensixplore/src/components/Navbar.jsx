@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'; // Import Link component
 
-import logo from '../assets/images/forensixplore.png';
+import logo from './Admin/assets/images/forensixplore.png';
 
 const Navbar = () => {
   return (
