@@ -1,11 +1,11 @@
 
-import AdminNavbar from './Admin_Navbar';
-import Footor from '../Footor';
+// import AdminNavbar from './Admin_Navbar';
+// import Footor from '../Footor';
 import './assets/css/admin.css'
 function EditUser() {
     return (
         <>
-        <AdminNavbar></AdminNavbar>
+        {/* <AdminNavbar></AdminNavbar> */}
             <section className="form__section">
                 <div className="container form__section-container">
                     <h2>Edit User</h2>
@@ -26,7 +26,7 @@ function EditUser() {
                     </form>
                 </div>
             </section>
-            <Footor></Footor>
+            {/* <Footor></Footor> */}
         </>
     );
 }

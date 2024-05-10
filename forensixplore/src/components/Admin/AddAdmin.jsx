@@ -1,10 +1,10 @@
-import AdminNavbar from './Admin_Navbar';
-import Footer from '../Footor';
+// import AdminNavbar from './Admin_Navbar';
+// import Footer from '../Footor';
 import './assets/css/admin.css'
 function AddAdmin() {
     return (
         <>
-        <AdminNavbar></AdminNavbar>
+        {/* <AdminNavbar></AdminNavbar> */}
             <section className="form__section">
                 <div className="container form__section-container">
                     <h2>Add Admin</h2>
@@ -25,7 +25,7 @@ function AddAdmin() {
                     </form>
                 </div>
             </section>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </>
     );
 }

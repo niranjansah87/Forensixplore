@@ -1,12 +1,12 @@
 
 import { Link } from 'react-router-dom';
-import AdminNavbar from './Admin_Navbar';
-import Footor from '../Footor';
+// import AdminNavbar from './Admin_Navbar';
+// import Footor from '../Footor';
 import './assets/css/admin.css'
 function ManageAdmin() {
     return (
         <>
-            <AdminNavbar></AdminNavbar>
+            {/* <AdminNavbar></AdminNavbar> */}
         
         <div className="dashboard">
             <div className="container dashboard__container">
@@ -92,7 +92,7 @@ function ManageAdmin() {
                 </main>
             </div>
         </div>
-        <Footor></Footor>
+        {/* <Footor></Footor> */}
         </>
     );
 }

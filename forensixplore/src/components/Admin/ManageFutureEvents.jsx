@@ -1,12 +1,12 @@
 
 import { Link } from 'react-router-dom';
-import AdminNavbar from './Admin_Navbar';
-import Footor from '../Footor';
+// import AdminNavbar from './Admin_Navbar';
+// import Footor from '../Footor';
 import './assets/css/admin.css'
 function ManageFutureEvents() {
     return (
         <>
-        <AdminNavbar></AdminNavbar>
+        {/* <AdminNavbar></AdminNavbar> */}
             <section className="dashboard">
                 <div className="container dashboard__container">
                     <button id="show__sidebar-btn" className="sidebar__toggle"><i className="uil uil-angle-right-b"></i></button>
@@ -85,7 +85,7 @@ function ManageFutureEvents() {
                     </main>
                 </div>
             </section>
-            <Footor></Footor>
+            {/* <Footor></Footor> */}
         </>
     );
 }
