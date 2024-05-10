@@ -1,8 +1,10 @@
-
+import AdminNavbar from './Admin_Navbar';
+import Footor from '../Footor';
 
 function EditBlog() {
     return (
         <>
+        <AdminNavbar></AdminNavbar>
             <section className="form__section">
                 <div className="container form__section-container">
                     <h2>Edit Blog</h2>
@@ -25,6 +27,7 @@ function EditBlog() {
                     </form>
                 </div>
             </section>
+            <Footor></Footor>
         </>
     );
 }

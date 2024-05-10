@@ -1,8 +1,10 @@
-
+import AdminNavbar from './Admin_Navbar';
+import Footor from '../Footor';
 
 function EditFutureEvents() {
     return (
         <>
+        <AdminNavbar></AdminNavbar>
             <section className="form__section">
                 <div className="container form__section-container">
                     <h2>Edit Future Events</h2>
@@ -31,6 +33,7 @@ function EditFutureEvents() {
                     </form>
                 </div>
             </section>
+            <Footor></Footor>
         </>
     );
 }

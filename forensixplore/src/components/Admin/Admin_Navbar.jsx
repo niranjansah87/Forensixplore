@@ -17,7 +17,7 @@ const Navbar = () => {
             <nav id="main-menu">
               <ul>
                 {/* Use Link for navigation */}
-                <li className="menu-item-has-children"><Link to="/">Home</Link></li>
+                <li className="menu-item-has-children"><Link to="/admin">Home</Link></li>
                 <li className="menu-item-has-children"><Link to="/about">About</Link></li>
                 <li className="menu-item-has-children">
                   <Link to="/">Events</Link>
@@ -33,7 +33,7 @@ const Navbar = () => {
           </div>
           {/* Mobile Menu */}
           <ul className="mobile_menu">
-            <li className="menu-item-has-children"><Link to="/">Home</Link></li>
+            <li className="menu-item-has-children"><Link to="/admin">Home</Link></li>
             <li className="menu-item-has-children"><Link to="/about">About</Link></li>
             <li className="menu-item-has-children">
               <Link to="/">Events</Link>

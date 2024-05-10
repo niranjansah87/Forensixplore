@@ -1,8 +1,10 @@
-
+import AdminNavbar from './Admin_Navbar';
+import Footor from '../Footor';
 
 function AddPastEvent() {
     return (
         <>
+        <AdminNavbar></AdminNavbar>
             <section className="form__section">
                 <div className="container form__section-container">
                     <h2>Add Event</h2>
@@ -31,6 +33,7 @@ function AddPastEvent() {
                     </form>
                 </div>
             </section>
+            <Footor></Footor>
         </>
     );
 }
