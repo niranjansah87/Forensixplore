@@ -1,0 +1,83 @@
+[{
+  "_id": {
+    "$oid": "66373f9f8e6d7d9a29415917"
+  },
+  "name": "Niranjan sah",
+  "ID_NO": 2100090187,
+  "email": "2100090187csit@gmail.com",
+  "contact": {
+    "$numberLong": "8002004609"
+  },
+  "password": "$2a$10$8.PRN6mRNXrZ0fNp4O3A6e2XhYq1U9ygb83Ah5a/rpwfkQ/J5POr6",
+  "isAdmin": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663745095d9403dccd04623b"
+  },
+  "name": "Snigdha Sindhusha Mantha",
+  "ID_NO": 2100090186,
+  "email": "niranjansah250@gmail.com",
+  "contact": {
+    "$numberLong": "8002004608"
+  },
+  "password": "$2a$10$uVsaNFswcThkDx57v993e.3QSw91uHtXLNKgPOuvWhq8k4p9fR7Zm",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66374579c5b77fbf662e0867"
+  },
+  "name": "Mohammad Khaja Shaik",
+  "ID_NO": 2100090140,
+  "email": "2100090140@kluniversity.in",
+  "contact": {
+    "$numberLong": "8002004607"
+  },
+  "password": "$2a$10$TWvcJTOR1QPXHJ9gGXT6LOWk3FXPMeZy5nut6bOYurzEjCkmDRm7e",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663745a6c5b77fbf662e086a"
+  },
+  "name": "Sumanth Dhruva",
+  "ID_NO": {
+    "$numberLong": "2200090134"
+  },
+  "email": "2200090134@kluniversity.in",
+  "contact": {
+    "$numberLong": "8002004606"
+  },
+  "password": "$2a$10$vu89GUo9jOXRqwPMTXmpduCpit2Buj7n/UdQk/ZAvKNPRqihIdiQe",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663745e9c5b77fbf662e086d"
+  },
+  "name": "B Koushik",
+  "ID_NO": {
+    "$numberLong": "2200090018"
+  },
+  "email": "2200090018@kluniversity.in",
+  "contact": {
+    "$numberLong": "8002004605"
+  },
+  "password": "$2a$10$dnBV3YsV16cE8nq9s9Ru0.1lNko3McQs42WevQ00rJqN/SxaRGuSi",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663746d9235f8a3002233a5c"
+  },
+  "name": "Sonu Nigam",
+  "ID_NO": 2100060020,
+  "email": "2100060020@kluniversity.in",
+  "contact": {
+    "$numberLong": "8002004605"
+  },
+  "password": "$2a$10$uoGG0GOAXx8/iaDe3pu.quVJEtdzWKUZS.nJimak95ZLGHa2q9D76",
+  "__v": 0
+}]

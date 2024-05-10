@@ -1,0 +1,113 @@
+[{
+  "_id": {
+    "$oid": "663b06ed2375cc0261e3b9d4"
+  },
+  "title": "Exploring the Wonders of Machu Picchu",
+  "date": {
+    "$date": "2024-05-10T00:00:00.000Z"
+  },
+  "category": "Travel",
+  "blog_thumbnail": "https://miro.medium.com/v2/resize:fit:1106/1*wBQY88bsfYG_RuPvWdcqhA.jpeg",
+  "blog_link": "https://mismatchedpassports.com/exploring-wonder-world-machu-picchu/",
+  "__v": 0,
+  "description": "Who does not dream of visiting Machu Picchu? High above the Andean mountains, the beauty of the lost city of the Incas shines through."
+},
+{
+  "_id": {
+    "$oid": "663b0c088fb158b864278443"
+  },
+  "title": "The Rise of Artificial Intelligence in Healthcare",
+  "date": "2024-05-12",
+  "category": "Technology",
+  "description": "Explore how artificial intelligence is revolutionizing healthcare, from diagnosing diseases to personalized treatment plans.",
+  "blog_thumbnail": "https://media.licdn.com/dms/image/D5612AQGmjuT29M-qZQ/article-cover_image-shrink_720_1280/0/1702755646814?e=2147483647&v=beta&t=EN9_9QZkDRkmcuPgkFpJx8GfAdRRfR5Us1BPjV8TbP0",
+  "blog_link": "https://example.com/ai-healthcare"
+},
+{
+  "_id": {
+    "$oid": "663b0c088fb158b864278444"
+  },
+  "title": "Mastering the Art of Sourdough Bread Making",
+  "date": "2024-05-15",
+  "category": "Food",
+  "description": "Learn the secrets to baking delicious sourdough bread at home, from creating the perfect starter to achieving a crispy crust.",
+  "blog_thumbnail": "https://sourdoughsparrow.com/cdn/shop/files/Breadandbutter.jpg?v=1699922044&width=1080",
+  "blog_link": "https://example.com/sourdough-bread"
+},
+{
+  "_id": {
+    "$oid": "663b0c088fb158b864278445"
+  },
+  "title": "The Impact of Climate Change on Wildlife",
+  "date": "2024-05-18",
+  "category": "Environment",
+  "description": "Discover how climate change is affecting wildlife around the world, from polar bears in the Arctic to coral reefs in the ocean.",
+  "blog_thumbnail": "https://cdn.downtoearth.org.in/library/large/2017-02-16/0.05231300_1487242270_elephants.jpg",
+  "blog_link": "https://example.com/climate-change-wildlife"
+},
+{
+  "_id": {
+    "$oid": "663b0c088fb158b864278446"
+  },
+  "title": "Unraveling the Mysteries of Quantum Mechanics",
+  "date": "2024-05-20",
+  "category": "Science",
+  "description": "Delve into the mind-bending world of quantum mechanics and learn about its strange yet fascinating principles.",
+  "blog_thumbnail": "https://media.licdn.com/dms/image/D5612AQGmRV51Y35Jdw/article-cover_image-shrink_600_2000/0/1690523681392?e=2147483647&v=beta&t=aNRP1eQcqSuDSzUcOJVZrnqBWn_LdTzQDn18xCkjo3Y",
+  "blog_link": "https://example.com/quantum-mechanics"
+},
+{
+  "_id": {
+    "$oid": "663b0c088fb158b864278447"
+  },
+  "title": "The Art of Minimalist Living: Simplify Your Life",
+  "date": "2024-05-22",
+  "category": "Lifestyle",
+  "description": "Discover the benefits of minimalist living and how you can simplify your life by decluttering your space and focusing on what truly matters.",
+  "blog_thumbnail": "https://media.licdn.com/dms/image/D4D12AQGf7zZiEx5ztA/article-cover_image-shrink_720_1280/0/1681614715654?e=2147483647&v=beta&t=d7-k2Wonc9qW-Xte6qQsrxR7YuCXayiKJigtrAhZBkg",
+  "blog_link": "https://example.com/minimalist-living"
+},
+{
+  "_id": {
+    "$oid": "663b0c088fb158b864278448"
+  },
+  "title": "Capturing the Beauty of Nature Through Photography",
+  "date": "2024-05-25",
+  "category": "Photography",
+  "description": "Learn the techniques and tips for capturing stunning photographs of nature, from landscapes to wildlife.",
+  "blog_thumbnail": "https://hips.hearstapps.com/hmg-prod/images/cvanessadewson-nature-9-1618585371.jpg?crop=1.00xw:0.844xh;0.00170xw,0.0867xh&resize=2048:*",
+  "blog_link": "https://example.com/nature-photography"
+},
+{
+  "_id": {
+    "$oid": "663b0c088fb158b864278449"
+  },
+  "title": "The Power of Mindfulness: Cultivating Inner Peace",
+  "date": "2024-05-28",
+  "category": "Wellness",
+  "description": "Discover how practicing mindfulness can help reduce stress, increase self-awareness, and cultivate inner peace in your life.",
+  "blog_thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlRPbTj8mSHHOdB77Ycwkjl_a9y-Zqs5odm9gkwK6SedzpMj2z38QiA3PRuGA1MWQW3KY&usqp=CAU",
+  "blog_link": "https://example.com/mindfulness-peace"
+},
+{
+  "_id": {
+    "$oid": "663b0c088fb158b86427844a"
+  },
+  "title": "Exploring the Rich History of Ancient Rome",
+  "date": "2024-05-30",
+  "category": "History",
+  "description": "Journey back in time to ancient Rome and explore its rich history, from the rise of the Roman Republic to the fall of the Roman Empire.",
+  "blog_thumbnail": "https://i.natgeofe.com/k/a6c9f195-de20-445d-9d36-745ef56042c5/OG_Colosseum_Ancient-Rome_KIDS_1122.jpg",
+  "blog_link": "https://example.com/ancient-rome"
+},
+{
+  "_id": {
+    "$oid": "663b0c088fb158b86427844b"
+  },
+  "title": "The Future of Space Exploration: Beyond Earth",
+  "date": "2024-06-02",
+  "category": "Space",
+  "description": "Discover the exciting possibilities and challenges of space exploration beyond Earth, from manned missions to Mars to the search for extraterrestrial life.",
+  "blog_thumbnail": "https://media.licdn.com/dms/image/D4E12AQGvKpELb378uQ/article-cover_image-shrink_720_1280/0/1700251539850?e=2147483647&v=beta&t=BF8ugDcxNdKbLHZ9-f5_OrNTywdhr-knnRZE3pSz-6I",
+  "blog_link": "https://example.com/space-exploration"
+}]
