@@ -6,7 +6,7 @@ function EditBlog() {
         <>
         {/* <AdminNavbar></AdminNavbar> */}
             <section className="form__section">
-                <div className="container form__section-container">
+                <div className="containerdiv form__section-container">
                     <h2>Edit Blog</h2>
                     <form onSubmit={handleSubmit} encType="multipart/form-data">
                         <label>Title</label>

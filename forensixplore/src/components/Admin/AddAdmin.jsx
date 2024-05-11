@@ -1,12 +1,12 @@
 // import AdminNavbar from './Admin_Navbar';
 // import Footer from '../Footor';
-// import './assets/css/admin.css'
+import './assets/css/admin.css'
 function AddAdmin() {
     return (
         <>
         {/* <AdminNavbar></AdminNavbar> */}
             <section className="form__section">
-                <div className="container form__section-container">
+                <div className="containerdiv form__section-container">
                     <h2>Add Admin</h2>
                     <form onSubmit={handleSubmit} encType="multipart/form-data">
                         <label>Name</label>

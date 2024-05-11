@@ -65,7 +65,7 @@ const Footer = () => {
         <div className="row fc justify-content-center">
           <div className="col-lg-6 col-sm-6 col-xs-12" style={{ marginTop: "-30px" }}>
             <div className="footer_copyright ">
-              <p>©2024 <a href="https://niranjansah87.com.np/" target="_blank" style={{ color: "red" }}>Niranjan sah</a> | All Rights Reserved</p>
+              <p>© 2024 <a href="https://niranjansah87.com.np/" target="_blank" style={{ color: "red" }}>Niranjan sah</a> | All Rights Reserved</p>
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@ function ManageFutureEvents() {
         <>
         {/* <AdminNavbar></AdminNavbar> */}
             <section className="dashboard">
-                <div className="container dashboard__container">
+                <div className="containerdiv dashboard__container">
                     <button id="show__sidebar-btn" className="sidebar__toggle"><i className="uil uil-angle-right-b"></i></button>
                     <button id="hide__sidebar-btn" className="sidebar__toggle"><i className="uil uil-angle-left-b"></i></button>
 
