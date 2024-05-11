@@ -1,12 +1,13 @@
 // import './assets/css/admin.module.css'
 import { Link } from 'react-router-dom';
-// import AdminNavbar from './Admin_Navbar';
-// import Footor from '../Footor';
+import AdminNavbar from './AdminNavbar';
+
 // import './assets/css/admin.css'
 function AdminMain() {
     return (
         <>
-        {/* <AdminNavbar></AdminNavbar> */}
+        <AdminNavbar></AdminNavbar>
+        <div className="bgmi">
             <section className="dashboard">
                 <div className="container dashboard__container">
                     <button id="show__sidebar-btn" className="sidebar__toggle"><i className="uil uil-angle-right-b"></i></button>
@@ -88,7 +89,8 @@ function AdminMain() {
                     </main>
                 </div>
             </section>
-        {/* <Footor></Footor> */}
+            </div>
+        
         </>
     );
 }

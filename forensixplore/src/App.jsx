@@ -52,7 +52,7 @@ function App() {
           <Route exact path="/manage-admin" element={<ManageAdmin />} /> 
           <Route exact path="/manage-past" element={<ManagePastEvents />} /> 
           <Route exact path="/manage-future" element={<ManageFutureEvents />} /> 
-          <Route exact path="/login" element={<Login />} /> 
+          <Route exact path="/admin/login" element={<Login />} /> 
           {/* Admin Route End */}
         </Routes>
       </BrowserRouter>

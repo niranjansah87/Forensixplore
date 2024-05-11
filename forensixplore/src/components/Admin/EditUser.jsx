@@ -1,15 +1,17 @@
 
-// import AdminNavbar from './Admin_Navbar';
+import AdminNavbar from './AdminNavbar';
 // import Footor from '../Footor';
 // import './assets/css/admin.css'
 function EditUser() {
     return (
         <>
-        {/* <AdminNavbar></AdminNavbar> */}
+        <AdminNavbar></AdminNavbar>
+            <div className="bgmi">
             <section className="form__section">
                 <div className="containerdiv form__section-container">
-                    <h2>Edit User</h2>
+                    
                     <form onSubmit={handleSubmit} encType="multipart/form-data">
+                    <h2>Edit User</h2>
                         <label>Name</label>
                         <input type="text" placeholder="Enter your Name" name="name" />
                         <label>ID NO</label>
@@ -26,6 +28,7 @@ function EditUser() {
                     </form>
                 </div>
             </section>
+            </div>
             {/* <Footor></Footor> */}
         </>
     );

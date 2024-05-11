@@ -1,14 +1,16 @@
-// import AdminNavbar from './Admin_Navbar';
+import AdminNavbar from './AdminNavbar';
 // import Footor from '../Footor';
 // import './assets/css/admin.css'
 function EditBlog() {
     return (
         <>
-        {/* <AdminNavbar></AdminNavbar> */}
+        <AdminNavbar></AdminNavbar>
+            <div className="bgmi">
             <section className="form__section">
                 <div className="containerdiv form__section-container">
-                    <h2>Edit Blog</h2>
+                    
                     <form onSubmit={handleSubmit} encType="multipart/form-data">
+                    <h2>Edit Blog</h2>
                         <label>Title</label>
                         <input type="text" placeholder="Enter the Title" />
                         <label>Date</label>
@@ -16,7 +18,7 @@ function EditBlog() {
                         <label>Category</label>
                         <input type="text" placeholder="Enter the Category" />
                         <label>Description</label>
-                        <textarea rows="8" placeholder="Enter your Description"></textarea>
+                        <textarea rows="2" placeholder="Enter your Description"></textarea>
                         <div className="form__control">
                             <label htmlFor="thumbnail">Blog Thumbnail</label>
                             <input type="file" id="thumbnail" />
@@ -27,6 +29,7 @@ function EditBlog() {
                     </form>
                 </div>
             </section>
+            </div>
             {/* <Footor></Footor> */}
         </>
     );

@@ -1,14 +1,16 @@
-// import AdminNavbar from './Admin_Navbar';
+import AdminNavbar from './AdminNavbar';
 // import Footor from '../Footor';
 // import './assets/css/admin.css'
 function AddFutureEvent() {
     return (
         <>
-        {/* <AdminNavbar></AdminNavbar> */}
+        <AdminNavbar></AdminNavbar>
+            <div className="bgmi">
             <section className="form__section">
                 <div className="containerdiv form__section-container">
-                    <h2>Add Event</h2>
+                    
                     <form onSubmit={handleSubmit} encType="multipart/form-data">
+                    <h2>Add Event</h2>
                         <label>Title</label>
                         <input type="text" placeholder="Enter the Title" name="title" />
                         <label>Date</label>
@@ -22,7 +24,7 @@ function AddFutureEvent() {
                             <option value="LCH">LCH</option>
                         </select>
                         <label>Description</label>
-                        <textarea rows="6" placeholder="Enter the Description" name="description"></textarea>
+                        <textarea rows="2" placeholder="Enter the Description" name="description"></textarea>
                         <div className="form__control">
                             <label htmlFor="thumbnail">Event Poster</label>
                             <input type="file" id="thumbnail" name="eventPoster" />
@@ -33,6 +35,7 @@ function AddFutureEvent() {
                     </form>
                 </div>
             </section>
+            </div>
             {/* <Footor></Footor> */}
         </>
     );

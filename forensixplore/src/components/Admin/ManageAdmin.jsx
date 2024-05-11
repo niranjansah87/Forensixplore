@@ -1,12 +1,13 @@
 
 import { Link } from 'react-router-dom';
-// import AdminNavbar from './Admin_Navbar';
+import AdminNavbar from './AdminNavbar';
 // import Footor from '../Footor';
 // import './assets/css/admin.css'
 function ManageAdmin() {
     return (
         <>
-            {/* <AdminNavbar></AdminNavbar> */}
+            <AdminNavbar></AdminNavbar>
+            <div className="bgmi">
         
         <div className="dashboard">
             <div className="containerdiv dashboard__container">
@@ -22,7 +23,7 @@ function ManageAdmin() {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/admin" className="active">
+                                <Link to="/admin" >
                                     <i className="uil uil-postcard"></i>
                                     <h5>Manage Blog</h5>
                                 </Link>
@@ -34,13 +35,13 @@ function ManageAdmin() {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/manage-admin">
+                                <Link to="/manage-admin" className="active">
                                     <i className="uil uil-users-alt"></i>
                                     <h5>Manage Admin</h5>
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/add-past">
+                                <Link to="/add-past" >
                                     <i className="uil uil-edit"></i>
                                     <h5>Add Past Event</h5>
                                 </Link>
@@ -91,6 +92,7 @@ function ManageAdmin() {
                     </table>
                 </main>
             </div>
+        </div>
         </div>
         {/* <Footor></Footor> */}
         </>

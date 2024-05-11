@@ -38,15 +38,25 @@
   text-decoration: none;
   box-sizing: border-box;
 } */
-
-/* body {
-  font-family: "Montserrat", sans-serif;
-  line-height: 1.6;
-  color: var(--color-gray-200);
-  overflow-x: hidden;
+.addbox{
+ backdrop-filter:blur(100px);
+  background: rgba(0, 0, 0, 0.5);
   
-  font-size: 0.9rem;
-} */
+  padding:2px 50px;
+  border:2px solid #fff;
+  border-radius: 20px;
+  
+
+}
+.bgmi {
+  background:url('../images/admin-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  
+  
+}
 
 .containerdiv {
   width: var(--container-width-lg);
@@ -92,21 +102,56 @@ h4 {
 a {
   color: var(--color-white);
 }
+.navv_logo{
+  margin-top: -10px;
 
-/* img {
+  width: 140px;
+}
+.pavtar {
   display: block;
   width: 100%;
   object-fit: cover;
   height: 100%;
-} */
+}
 /* #endregion */
 
+.avatar {
+  width: 2.5rem;
+  /* aspect-ratio: 1/1; */
+  height: 2.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 0.3rem solid var(--color-bg);
+}
+.navh {
+  background: var(--color-primary);
+  width: 100vw;
+  height: 4rem;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+}
 
+.navh button {
+  display: none;
+}
 
+.nav__container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .nav__logo {
   font-weight: 600;
   font-size: 1.2rem;
+}
+/* Add this CSS to remove list item markers */
+.nav__items,
+.nav__items ul {
+  list-style-type: none;
 }
 
 .nav__items {
@@ -123,7 +168,7 @@ a {
 .nav__profile ul {
   position: absolute;
   top: 140%;
-  right: 0;
+  right: -10;
   display: flex;
   flex-direction: column;
   box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.4);
@@ -132,7 +177,7 @@ a {
   transition: var(--transition);
 }
 
-/* show nav ul when nav profile is hovered over */
+/* show .navh ul when .navh profile is hovered over */
 
 .nav__profile:hover > ul {
   visibility: visible;
@@ -150,7 +195,7 @@ a {
   background: var(--color-red);
   color: var(--color-bg);
 }
-/* #endregion NAV */
+/* #endregion .navh */
 
 /* #region CATEGORY BUTTON */
 
@@ -275,6 +320,7 @@ a {
   cursor: pointer;
   transition: var(--transition);
   color: var(--color-white);
+  margin-top:7px;
 }
 
 .btn.sm {
@@ -293,8 +339,8 @@ a {
 
 /* #region DASHBOARD */
 .dashboard {
-  margin-top: 6rem;
-  padding: 2rem;
+  margin-top: 4rem;
+  padding: 0rem;
 }
 
 .sidebar__toggle {
@@ -302,25 +348,30 @@ a {
 }
 
 .dashboard__container {
+  width: 80%;
+  
+  
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: grid;
-  grid-template-columns: 15rem auto;
+  grid-template-columns: 18rem auto;
   gap: 2rem;
-  background: var(--color-gray-900);
   padding: 2rem;
   margin-bottom: 5rem;
   border-radius: 2rem;
+  backdrop-filter: blur(27px);
+  background: rgba(101, 97, 97, 0.5);
+  /* background: var(--color-bg); */
 }
 .dashboard aside a {
   color: var(--color-white);
-  background: var(--color-primary);
+  background: rgb(60, 60, 172);
   display: flex;
-  gap: 1rem;
+  gap: rem;
   align-items: center;
-  padding: 1.6rem;
+  padding: 1.2rem;
 }
 .dashboard aside ul li:not(:last-child) a {
   border-bottom: 1px solid var(--color-gray-700);
@@ -462,7 +513,7 @@ a {
   display: grid;
   place-items: center;
   height: 100vh;
-  margin: 5rem 0;
+  margin: 4rem 0;
 }
 .form__section-container {
   width: var(--form-width);
@@ -490,8 +541,15 @@ a {
 
 form {
   display: flex;
+  margin-top: -65px;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0rem;
+  backdrop-filter:blur(10px);
+  /* background: rgb(143, 135, 135); */
+  
+  padding:2px 50px;
+  border:2px solid #fff;
+  border-radius: 20px;
 }
 
 .form__control {
@@ -520,15 +578,20 @@ form {
 /* #endregion GENERAL DASHBAORD */
 
 input,
-textarea,
-select {
+textarea {
   padding: 0.8rem 1.4rem;
-  background-color: var(--color-gray-900);
+  background-color: transparent;
   border-radius: var(--card-border-radius-2);
   resize: none;
   color: var(--color-white);
 }
-
+select {
+  padding: 0.8rem 1.4rem;
+  background-color: rgb(0, 136, 255);
+  border-radius: var(--card-border-radius-2);
+  resize: none;
+  color: var(--color-white);
+}
 /* #endregion GENERAL FORM */
 
 /* #region  MEDIA QUERIES (Medium-Sized Devices) */

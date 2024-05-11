@@ -1,14 +1,17 @@
-// import AdminNavbar from './Admin_Navbar';
+import AdminNavbar from './AdminNavbar';
 // import Footer from '../Footor';
 import './assets/css/admin.css'
 function AddAdmin() {
     return (
         <>
-        {/* <AdminNavbar></AdminNavbar> */}
+        <AdminNavbar></AdminNavbar>
+        <div className="bgmi">
             <section className="form__section">
                 <div className="containerdiv form__section-container">
-                    <h2>Add Admin</h2>
+                {/* <div className="addbox"> */}
+                    
                     <form onSubmit={handleSubmit} encType="multipart/form-data">
+                    <h2>Add Admin</h2>
                         <label>Name</label>
                         <input type="text" placeholder="Enter your Name" name="name" />
                         <label>ID NO</label>
@@ -23,8 +26,10 @@ function AddAdmin() {
                         <input type="password" placeholder="Confirm Password" name="confirmPassword" />
                         <button type="submit" className="btn">Add User</button>
                     </form>
+                    {/* </div> */}
                 </div>
             </section>
+            </div>
             {/* <Footer></Footer> */}
         </>
     );

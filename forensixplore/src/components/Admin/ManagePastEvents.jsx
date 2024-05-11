@@ -1,12 +1,13 @@
 
 import { Link } from 'react-router-dom';
-// import AdminNavbar from './Admin_Navbar';
+import AdminNavbar from './AdminNavbar';
 // import Footor from '../Footor';
 // import './assets/css/admin.css'
 function ManagePastEvents() {
     return (
         <>
-        {/* <AdminNavbar></AdminNavbar> */}
+        <AdminNavbar></AdminNavbar>
+            <div className="bgmi">
         <div className="dashboard">
             <div className="containerdiv dashboard__container">
                 <button id="show__sidebar-btn" className="sidebar__toggle"><i className="uil uil-angle-right-b"></i></button>
@@ -21,7 +22,7 @@ function ManagePastEvents() {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/admin" className="active">
+                                <Link to="/admin" >
                                     <i className="uil uil-postcard"></i>
                                     <h5>Manage Blog</h5>
                                 </Link>
@@ -45,7 +46,7 @@ function ManagePastEvents() {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/manage-past">
+                                <Link to="/manage-past" className="active">
                                     <i className="uil uil-list-ul"></i>
                                     <h5>Manage Past Events</h5>
                                 </Link>
@@ -85,6 +86,7 @@ function ManagePastEvents() {
                     </table>
                 </main>
             </div>
+        </div>
         </div>
         {/* <Footor></Footor> */}
         </>

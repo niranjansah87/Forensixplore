@@ -17,11 +17,11 @@ const Login = () => {
               <div className="check">
                 <input type="checkbox" /><span>Remember me</span>
               </div>
-              {/* <p></p> */}
+             
               <a href="http://" className="pass">Forget Password ?</a>
             </div>
             <button>Login</button>
-            {/* <p>Don&apos;t have an account ? <span>Register</span></p> */}
+           
           </div>
         </div>
       </div>
