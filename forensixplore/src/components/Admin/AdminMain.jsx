@@ -1,13 +1,47 @@
-// import './assets/css/admin.module.css'
+
+
+
 import { Link } from 'react-router-dom';
 import AdminNavbar from './AdminNavbar';
+import { useState, useEffect } from 'react';
 
-// import './assets/css/admin.css'
-function AdminMain() {
+function AdminMain({ setIsLoggedIn }) {
+    const [isLoggedInLocal, setIsLoggedInLocal] = useState(false);
+
+    useEffect(() => {
+        const checkLoginStatus = async () => {
+            try {
+                const authToken = localStorage.getItem('authToken');
+                const response = await fetch('http://localhost:5001/admin/checklogin', {
+                    method: 'GET',
+                    credentials: 'include',
+                    headers: {
+                        'auth-token': authToken,
+                    },
+                });
+
+                if (response.ok) {
+                    setIsLoggedInLocal(true);
+                    setIsLoggedIn(true);
+                } else {
+                    setIsLoggedInLocal(false);
+                    setIsLoggedIn(false);
+                }
+            } catch (error) {
+                console.error('Check login status error:', error.message);
+                setIsLoggedInLocal(false);
+                setIsLoggedIn(false);
+            }
+        };
+
+        checkLoginStatus();
+    }, [setIsLoggedIn]);
+
     return (
         <>
-        <AdminNavbar></AdminNavbar>
-        <div className="bgmi">
+            <AdminNavbar />
+            
+            <div className="bgmi">
             <section className="dashboard">
                 <div className="container dashboard__container">
                     <button id="show__sidebar-btn" className="sidebar__toggle"><i className="uil uil-angle-right-b"></i></button>
@@ -90,7 +124,7 @@ function AdminMain() {
                 </div>
             </section>
             </div>
-        
+            
         </>
     );
 }

@@ -226,12 +226,12 @@ router.post(
   }
 );
 
-//Route 3: Log out a User using POST "api/auth/logout". Login required
-router.post("/logout", fetchuser, (req, res) => {
+
+//Route 3:Log out a User using GET "api/auth/logout". Login required
+router.post("/logout", (req, res) => {
   res.clearCookie("authToken"); // Clear the authentication token cookie
   res.json({ message: "Logged out successfully" });
 });
-
 //Route 4: Fetch the user details using GET "api/auth/getuser". Login required
 router.get("/getuser", fetchuser, async (req, res) => {
   try {
