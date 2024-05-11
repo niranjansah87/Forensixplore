@@ -1,5 +1,5 @@
 
-import {useState} from 'react';
+
 // import Footer from "./components/Footor"
 // import Navbar from "./components/Navbar"
 import Team from "./components/Team"
@@ -28,8 +28,7 @@ import Login from "./components/Admin/Login";
 
 function App() {
 
-  const [, setLoginUser] = useState(null);
-  const [,setIsLoggedIn] = useState(false);
+ 
   return (
     <>
     <BrowserRouter>
@@ -48,7 +47,7 @@ function App() {
           <Route exact path="/add-blog" element={<AddBlog />} /> 
           <Route exact path="/add-past" element={<AddPastEvent />} /> 
           <Route exact path="/add-future" element={<AddFutureEvent />} /> 
-          <Route exact path="/admin" element={<AdminMain setLoginUser={setLoginUser} setIsLoggedIn={setIsLoggedIn} />} /> 
+          <Route exact path="/admin" element={<AdminMain  />} /> 
           <Route exact path="/edit-blog" element={<EditBlog />} />
           <Route exact path="/edit-future" element={<EditFutureEvents />} /> 
           <Route exact path="/edit-past" element={<EditPastEvents />} /> 
@@ -56,7 +55,7 @@ function App() {
           <Route exact path="/manage-admin" element={<ManageAdmin />} /> 
           <Route exact path="/manage-past" element={<ManagePastEvents />} /> 
           <Route exact path="/manage-future" element={<ManageFutureEvents />} /> 
-          <Route exact path="/admin/login" element={<Login setLoginUser={setLoginUser}/>} /> 
+          <Route exact path="/admin/login" element={<Login/>} /> 
           {/* Admin Route End */}
         </Routes>
       </BrowserRouter>

@@ -1,36 +1,19 @@
-import { useState } from 'react'; // Import useState and useNavigate
-import { Link , useNavigate } from 'react-router-dom';
+// Import useState and useNavigate
+import  { useState } from 'react';
+import { Link  } from 'react-router-dom';
 
-import axios from 'axios';
 import logo from './assets/images/forensixplore.png';
 import avtar from './assets/images/Anonymous_Hacker.png';
 
 const AdminNavbar = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
-    const history = useNavigate(); // Initialize useNavigate
+    
 
     const toggleNav = () => {
         setIsNavOpen(!isNavOpen);
     };
 
-    const handleLogout = async (e) => {
-        e.preventDefault(); // Prevent default navigation behavior
-        try {
-            const response = await axios.post('http://localhost:5001/admin/logout', null, {
-                withCredentials: true,
-            });
-
-            if (response.status === 200) {
-                history('/admin/login');
-            } else {
-                console.error('Logout failed:', response.statusText);
-                alert('Logout failed. Please try again.');
-            }
-        } catch (error) {
-            console.error('Logout error:', error.message);
-            alert('Logout error. Please try again.');
-        }
-    };
+  
 
     return (
         <nav className="navh" style={{ backgroundColor: '#14192d' }}>
@@ -46,7 +29,7 @@ const AdminNavbar = () => {
                         </div>
                         <ul>
                             <li><Link to="/dashboard">Profile</Link></li>
-                            <li><Link onClick={handleLogout}>Logout</Link></li>
+                            <li><Link >Logout</Link></li>
                         </ul>
                     </li>
                 </ul>
