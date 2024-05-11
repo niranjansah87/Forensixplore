@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 // import AdminNavbar from './Admin_Navbar';
 // import Footor from '../Footor';
-import './assets/css/admin.css'
+// import './assets/css/admin.css'
 function ManagePastEvents() {
     return (
         <>

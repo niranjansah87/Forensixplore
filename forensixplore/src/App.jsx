@@ -22,6 +22,7 @@ import EditFutureEvents from "./components/Admin/EditFutureEvents";
 import ManageAdmin from "./components/Admin/ManageAdmin";
 import ManagePastEvents from "./components/Admin/ManagePastEvents";
 import ManageFutureEvents from "./components/Admin/ManageFutureEvents";
+import Login from "./components/Admin/Login";
 function App() {
 
 
@@ -51,6 +52,7 @@ function App() {
           <Route exact path="/manage-admin" element={<ManageAdmin />} /> 
           <Route exact path="/manage-past" element={<ManagePastEvents />} /> 
           <Route exact path="/manage-future" element={<ManageFutureEvents />} /> 
+          <Route exact path="/login" element={<Login />} /> 
           {/* Admin Route End */}
         </Routes>
       </BrowserRouter>

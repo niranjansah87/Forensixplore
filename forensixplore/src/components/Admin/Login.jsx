@@ -1,30 +1,25 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Forensixplore</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel="stylesheet" href="./login.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<div id="logo"> 
-  <h1><i>Forensixplore</i></h1>
-</div> 
-<section class="stark-login">
-  
-  <form action="" method="">	
-    <div id="fade-box">
-      <input type="number" name="ID_No" id="ID_No" placeholder="ID Number" required>
-        <input type="password" placeholder="Password" required>
+// import './assets/css/login.css'; 
 
-          <button>Log In</button> 
-        </div>
-      </form>
-      <div class="hexagons">
+const Login = () => {
+  return (
+    <div>
+      <div className="logo"> {/* Use the "logo" class */}
+        <h1><i>Forensixplore</i></h1>
+      </div>
+      <section className="stark-login">
+        <form action="" method="">	
+          <div className="fade-box"> {/* Use the "fade-box" class */}
+            <input type="number" name="ID_No" id="ID_No" placeholder="ID Number" required />
+            <input type="password" placeholder="Password" required />
+            <button>Log In</button> 
+          </div>
+        </form>
+        <div className="hexagons"> {/* Use the "hexagons" class */}
+          <span>&#x2B22;</span>
+          <span>&#x2B22;</span>
+          <span>&#x2B22;</span>
+          <span>&#x2B22;</span>
         <span>&#x2B22;</span>
         <span>&#x2B22;</span>
         <span>&#x2B22;</span>
@@ -33,11 +28,7 @@
         <span>&#x2B22;</span>
         <span>&#x2B22;</span>
         <span>&#x2B22;</span>
-        <span>&#x2B22;</span>
-        <span>&#x2B22;</span>
-        <span>&#x2B22;</span>
-        <span>&#x2B22;</span>
-        <br>
+        <br/>
           <span>&#x2B22;</span>
           <span>&#x2B22;</span>
           <span>&#x2B22;</span>
@@ -49,7 +40,7 @@
           <span>&#x2B22;</span>
           <span>&#x2B22;</span>
           <span>&#x2B22;</span>
-          <br>
+          <br/>
             <span>&#x2B22;</span>
             <span>&#x2B22;</span>
             <span>&#x2B22;</span>
@@ -63,7 +54,7 @@
             <span>&#x2B22;</span>
             <span>&#x2B22;</span>
             
-            <br>
+            <br/>
               <span>&#x2B22;</span>
               <span>&#x2B22;</span>
               <span>&#x2B22;</span>
@@ -75,7 +66,7 @@
               <span>&#x2B22;</span>
               <span>&#x2B22;</span>
               <span>&#x2B22;</span>
-              <br>
+              <br/>
                 <span>&#x2B22;</span>
                 <span>&#x2B22;</span>
                 <span>&#x2B22;</span>
@@ -88,26 +79,24 @@
                 <span>&#x2B22;</span>
                 <span>&#x2B22;</span>
                 <span>&#x2B22;</span>
-              </div>      
-            </section> 
-            
-            <div id="circle1">
-              <div id="inner-cirlce1">
-                <h2> </h2>
-              </div>
-            </div>
-            
-            
-            
-            <ul>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-<!-- partial -->
-  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+        </div>      
+      </section> 
+      
+      <div className="circle1"> {/* Use the "circle1" class */}
+        <div className="inner-circle1"> {/* Use the "inner-circle1" class */}
+          <h2> </h2>
+        </div>
+      </div>
+      
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  );
+}
 
-</body>
-</html>
+export default Login;

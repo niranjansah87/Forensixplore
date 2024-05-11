@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'; // Import Link component
-import './assets/css/admin.css'
+// import './assets/css/admin.css'
 import logo from './assets/images/forensixplore.png';
 
 const Navbar = () => {
