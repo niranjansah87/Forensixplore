@@ -12,7 +12,7 @@ app.use(express.json());
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 // Apply CORS middleware
-app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+app.use(cors({ origin: '*', credentials: true }));
 
 
 // Available routes
@@ -29,4 +29,18 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
+});
+
+
+const allowedOrigins = ['*']; // Add your allowed domains here
+
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Credentials', true);
+  next();
 });
