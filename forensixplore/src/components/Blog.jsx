@@ -9,7 +9,7 @@ function Blog() {
 
   useEffect(() => {
     // Fetch data from backend API endpoint
-    axios.get('http://localhost:5001/blog/getblog')
+    axios.get('https://forensixplore-backend.onrender.com/blog/getblog')
       .then(response => setBlogs(response.data))
       .catch(error => console.error('Error fetching blogs:', error));
   }, []);
