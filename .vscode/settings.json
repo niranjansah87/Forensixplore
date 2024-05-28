@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "scrolltopcontrol"
-    ]
+    ],
+    "files.autoSave": "afterDelay",
+    "editor.wordWrap": "on",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true
 }
