@@ -10,7 +10,7 @@ function Past_Events() {
   useEffect(() => {
     const fetchPastEvents = async () => {
       try {
-        const response = await axios.get('https://forensixplore-backend.onrender.com/pevent/getpastevents');
+        const response = await axios.get('http://localhost:5001/pevent/getpastevents');
         setPastEvents(response.data);
       } catch (error) {
         console.error(error);
@@ -37,10 +37,14 @@ function Past_Events() {
         </div>
       </section>
       <div className="content-wrapper">
-        {pastEvents.map((event) => (
+      {pastEvents.length === 0 ? (
+          <h1 className="no-events-message">Stay tuned for Upcoming Events</h1>
+        ) : (
+        pastEvents.map((event) => (
           <div className="news-card" key={event._id}>
             <a href={event.registrationLink} className="news-card__card-link"></a>
-            <img src={event.eventPoster} alt="" className="news-card__image" />
+            <img src={`http://localhost:5001/${event.eventPoster}`} alt="" className="news-card__image" />
+            
             <div className="news-card__text-wrapper">
               <h2 className="news-card__title">{event.title}</h2>
               <div className="news-card__post-date">{event.date.slice(0, 10)}</div>
@@ -53,7 +57,7 @@ function Past_Events() {
               </div>
             </div>
           </div>
-        ))}
+        )))}
       </div>
       <Footer />
     </>

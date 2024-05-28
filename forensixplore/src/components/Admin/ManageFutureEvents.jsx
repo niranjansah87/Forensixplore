@@ -1,9 +1,54 @@
+import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-import { Link } from 'react-router-dom';
 import AdminNavbar from './AdminNavbar';
-// import Footor from '../Footor';
-// import './assets/css/admin.css'
+
 function ManageFutureEvents() {
+    const [events, setEvents] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(0);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const checkLoggedIn = async () => {
+            const token = localStorage.getItem('authToken');
+            
+            if (!token) {
+                navigate('/admin/login');
+                return;
+            }
+
+            try {
+                const response = await axios.get('http://localhost:5001/fevent/getfutureevents', {
+                    params: { page: currentPage, limit: 4 }, // Fetch 4 events per page
+                    headers: { 'auth-token': token }
+                });
+                setEvents(response.data ); // Ensure the pastEvents property is an array
+                setTotalPages(Math.ceil(response.data.length / 4));
+            } catch (error) {
+                console.error('Error fetching past events:', error);
+            }
+        };
+
+        checkLoggedIn();
+    }, [currentPage, navigate]);
+
+    const handlePageChange = (page) => {
+        setCurrentPage(page);
+    };
+
+    const handleDelete = async (id) => {
+        const token = localStorage.getItem('authToken');
+        try {
+            await axios.delete(`http://localhost:5001/fevent/deletefutureevent/${id}`, {
+                headers: { 'auth-token': token }
+            });
+            setEvents(events.filter(event => event._id !== id));
+        } catch (error) {
+            console.error('Error deleting event:', error);
+        }
+    };
     return (
         <>
         <AdminNavbar></AdminNavbar>
@@ -27,12 +72,7 @@ function ManageFutureEvents() {
                                     <h5>Manage Blog</h5>
                                 </Link>
                             </li>
-                            {/* <li>
-                                <Link to="/add-admin">
-                                    <i className="uil uil-user-plus"></i>
-                                    <h5>Add Admin</h5>
-                                </Link>
-                            </li> */}
+                         
                             <li>
                                 <Link to="/manage-admin">
                                     <i className="uil uil-users-alt"></i>
@@ -67,22 +107,37 @@ function ManageFutureEvents() {
                     </aside>
                     <main>
                         <h2>Manage Future Events</h2>
+                        {events.length > 0 ? (
                         <table>
                             <thead>
                                 <tr>
                                     <th>Title</th>
+                                    <th>Category</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Travel</td>
-                                    <td><Link to="/edit-future" className="btn sm">Edit</Link></td>
-                                    <td><Link to="#" className="btn sm danger">Delete</Link></td>
-                                </tr>
+                            {events
+                                        .slice((currentPage - 1) * 4, currentPage * 4)
+                                        .map((event, index) => (
+                                            <tr key={index}>
+                                                <td>{event.title}</td>
+                                                <td>{event.category}</td>
+                                                <td><Link to={`/edit-future/${event._id}`} className="btn sm">Edit</Link></td>
+                                                <td><button onClick={() => handleDelete(event._id)} className="btn sm danger">Delete</button></td>
+                                            </tr>
+                                        ))}
                             </tbody>
                         </table>
+                         ) : (
+                            <p>No Future event events found.</p>
+                        )}
+                        <div className="pagination animated-pagination">
+                                <button disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>Previous</button>
+                                
+                                <button disabled={currentPage === totalPages} onClick={() => handlePageChange(currentPage + 1)}>Next</button>
+                            </div>
                     </main>
                 </div>
             </section>

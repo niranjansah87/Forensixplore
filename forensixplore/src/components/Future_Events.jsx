@@ -10,7 +10,7 @@ function Future_Events() {
   useEffect(() => {
     const fetchFutureEvents = async () => {
       try {
-        const response = await axios.get('https://forensixplore-backend.onrender.com/fevent/getfutureevents');
+        const response = await axios.get('http://localhost:5001/fevent/getfutureevents');
         setFutureEvents(response.data);
       } catch (error) {
         console.error(error);

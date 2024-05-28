@@ -12,6 +12,7 @@ function ManagePastEvents() {
     useEffect(() => {
         const checkLoggedIn = async () => {
             const token = localStorage.getItem('authToken');
+            console.log(token);
             if (!token) {
                 navigate('/admin/login');
                 return;
@@ -19,11 +20,11 @@ function ManagePastEvents() {
 
             try {
                 const response = await axios.get('http://localhost:5001/pevent/getpastevents', {
-                    params: { page: currentPage },
+                    params: { page: currentPage, limit: 4 }, // Fetch 4 events per page
                     headers: { 'auth-token': token }
                 });
-                setEvents(response.data.pastEvents);
-                setTotalPages(response.data.totalPages);
+                setEvents(response.data ); // Ensure the pastEvents property is an array
+                setTotalPages(Math.ceil(response.data.length / 4));
             } catch (error) {
                 console.error('Error fetching past events:', error);
             }
@@ -106,27 +107,35 @@ function ManagePastEvents() {
 
                         <main>
                             <h2>Manage Past Events</h2>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Title</th>
-                                        <th>Edit</th>
-                                        <th>Delete</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {events.map((event, index) => (
-                                        <tr key={index}>
-                                            <td>{event.title}</td>
-                                            <td><Link to={`/edit-past/${event._id}`} className="btn sm">Edit</Link></td>
-                                            <td><button onClick={() => handleDelete(event._id)} className="btn sm danger">Delete</button></td>
+                            {events.length > 0 ? (
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Category</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
                                         </tr>
-                                    ))}
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        {events
+                                        .slice((currentPage - 1) * 4, currentPage * 4)
+                                        .map((event, index) => (
+                                            <tr key={index}>
+                                                <td>{event.title}</td>
+                                                <td>{event.category}</td>
+                                                <td><Link to={`/edit-past/${event._id}`} className="btn sm">Edit</Link></td>
+                                                <td><button onClick={() => handleDelete(event._id)} className="btn sm danger">Delete</button></td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            ) : (
+                                <p>No past events found.</p>
+                            )}
                             <div className="pagination animated-pagination">
                                 <button disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>Previous</button>
-                                <span>{currentPage} of {totalPages}</span>
+                                
                                 <button disabled={currentPage === totalPages} onClick={() => handlePageChange(currentPage + 1)}>Next</button>
                             </div>
                         </main>

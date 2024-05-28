@@ -1,19 +1,33 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const Event = require("../models/past_events");
-const fetchuser = require("../middleware/fetchuser");
-const { body, validationResult } = require("express-validator");
-const sanitizeHtml = require("sanitize-html");
+const { body, validationResult } = require('express-validator');
+const multer = require('multer');
+const path = require('path');
+const Event = require('../models/past_events');
+const fetchuser = require('../middleware/fetchuser');
+const sanitizeHtml = require('sanitize-html');
 
-// Route 1: Create a past event using POST "/event/createpastevent". Login required
-router.post("/createpastevent",
+// Set up multer for file uploads
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'upload/past_Events');
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + path.extname(file.originalname));
+    }
+});
+
+const upload = multer({ storage: storage });
+
+// Route to create a past event
+router.post(
+    '/createpastevent',
     [
         fetchuser,
-        body("title", "Title is required").notEmpty(),
-        body("category", "Category is required").notEmpty().isIn(['TEC', 'HWB', 'ESO', 'LCH', 'IIE']),
-        
-        body("eventPoster", "Event poster URL is required").notEmpty().isURL(),
-        body("registrationLink", "Registration link must be a valid URL").optional().isURL(),
+        upload.single('eventPoster'), // Use multer middleware to handle the file upload
+        body('title', 'Title is required').notEmpty(),
+        body('category', 'Category is required').notEmpty().isIn(['TEC', 'HWB', 'ESO', 'LCH', 'IIE']),
+        body('registrationLink', 'Registration link must be a valid URL').optional().isURL()
     ],
     async (req, res) => {
         try {
@@ -22,12 +36,15 @@ router.post("/createpastevent",
                 return res.status(400).json({ errors: errors.array() });
             }
 
-            const { title, category, description,eventPoster, registrationLink } = req.body;
+            const { title, category, description, registrationLink } = req.body;
+            const eventPoster = req.file ? req.file.path : null;
+
             // Check if past event with the same title already exists
             const existingEvent = await Event.findOne({ title });
             if (existingEvent) {
-                return res.status(400).json({ error: "Event with this title already exists" });
+                return res.status(400).json({ error: 'Event with this title already exists' });
             }
+
             // Sanitize user inputs
             const sanitizedTitle = sanitizeHtml(title);
             const sanitizedCategory = sanitizeHtml(category);
@@ -42,13 +59,15 @@ router.post("/createpastevent",
             });
 
             const savedEvent = await newEvent.save();
-            res.json({ message: "Past event created successfully", event: savedEvent });
+            res.json({ message: 'Past event created successfully', event: savedEvent });
         } catch (error) {
             console.error(error.message);
-            res.status(500).send("Internal Server Error");
+            res.status(500).send('Internal Server Error');
         }
     }
 );
+
+
 
 // Route 2: Update a past event using PUT "/event/updatepastevent/:id". Login required
 router.put("/updatepastevent/:id",

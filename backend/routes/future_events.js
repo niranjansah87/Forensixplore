@@ -14,7 +14,7 @@ router.post("/createfutureevent",
         body("title", "Title is required").notEmpty(),
         body("date", "Date is required").notEmpty().isISO8601(),
         body("category", "Category is required").notEmpty().isIn(['TEC', 'HWB', 'ESO', 'LCH', 'IIE']),
-        body("eventPoster", "Event poster URL is required").notEmpty().isURL(),
+        body("eventPoster", "Event poster URL is required").optional().isURL(),
         body("registrationLink", "Registration link must be a valid URL").optional().isURL(),
     ],
     async (req, res) => {

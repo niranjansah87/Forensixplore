@@ -24,7 +24,7 @@ const futureEventsSchema = new mongoose.Schema({
     },
     eventPoster: {
         type: String,
-        required: true,
+        required: false,
     },
     registrationLink: {
         type: String,
