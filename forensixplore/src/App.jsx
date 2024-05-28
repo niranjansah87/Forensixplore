@@ -1,11 +1,11 @@
 
-
+import './App.css'
 // import Footer from "./components/Footor"
 // import Navbar from "./components/Navbar"
 import Team from "./components/Team"
 import Home from "./components/Home/Home"
 import About from "./components/About"
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter ,  Routes, Route } from 'react-router-dom';
 
 import Blog from "./components/Blog"
 import Future_Events from "./components/Future_Events";
@@ -28,22 +28,23 @@ import Login from "./components/Admin/Login";
 
 function App() {
 
- 
+
   return (
-    <>
+
     <BrowserRouter>
-        <Routes>
-          <Route index element={<Home />} />
-          <Route exact path="/about" element={<About />} />
-          <Route exact path="/team" element={<Team />} /> 
-          <Route exact path="/blog" element={<Blog />} /> 
-          <Route exact path="/past" element={<Past_Events />} /> 
-          <Route exact path="/future" element={<Future_Events />} /> 
+      <Routes>
+        <Route index element={<Home />} />
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/team" element={<Team />} />
+        <Route exact path="/blog" element={<Blog />} />
+        <Route exact path="/past" element={<Past_Events />} />
+        <Route exact path="/future" element={<Future_Events />} />
+        <Route exact path="/admin/login" element={<Login/>} /> 
+        
+        
 
-
-
-          {/* Admin Route Start */}
-          <Route exact path="/add-admin" element={<AddAdmin />} />
+        {/* Admin Route Start */}
+        <Route exact path="/add-admin" element={<AddAdmin />} />
           <Route exact path="/add-blog" element={<AddBlog />} /> 
           <Route exact path="/add-past" element={<AddPastEvent />} /> 
           <Route exact path="/add-future" element={<AddFutureEvent />} /> 
@@ -55,12 +56,12 @@ function App() {
           <Route exact path="/manage-admin" element={<ManageAdmin />} /> 
           <Route exact path="/manage-past" element={<ManagePastEvents />} /> 
           <Route exact path="/manage-future" element={<ManageFutureEvents />} /> 
-          <Route exact path="/admin/login" element={<Login/>} /> 
-          {/* Admin Route End */}
-        </Routes>
-      </BrowserRouter>
+          
+        {/* Admin Route End */}
+      </Routes>
+    </BrowserRouter>
 
-    </>
+
   )
 }
 

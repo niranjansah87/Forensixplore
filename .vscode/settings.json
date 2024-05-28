@@ -4,5 +4,6 @@
     ],
     "files.autoSave": "afterDelay",
     "editor.wordWrap": "on",
-    "editor.bracketPairColorization.independentColorPoolPerBracketType": true
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "CodeGPT.apiKey": "CodeGPT Plus Beta"
 }

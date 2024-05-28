@@ -23,6 +23,7 @@ Version      : 1.0
     15. START PARTNER DESIGN
     16. START FOOTER DESIGN
   =============================================================*/
+
 /*
 * ----------------------------------------------------------------------------------------
 * 01.GENERAL STYLE
@@ -104,6 +105,7 @@ fieldset {
   justify-content: center;
   align-items: center;
 }
+
 
 #loader-video {
   width: 100vw; /* Set width to viewport width */

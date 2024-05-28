@@ -243,8 +243,7 @@ router.get("/getuser", fetchuser, async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
-
-//Route 5: Check whether user is logged in or not using GET "api/auth/checklogin". No login required
+//Route 5: Check whether user is logged in or not using GET "admin/checklogin". No login required
 router.get("/checklogin", fetchuser, (req, res) => {
   try {
     res.status(200).json({ isLoggedIn: true, user: req.user, message: "User logged in" });
@@ -356,5 +355,8 @@ router.post('/resetpassword/:id/:token', async (req, res) => {
   }
 
 });
+
+
+
 
 module.exports = router;

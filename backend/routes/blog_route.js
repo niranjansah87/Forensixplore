@@ -4,16 +4,28 @@ const Blog = require("../models/blog.js");
 const fetchuser = require("../middleware/fetchuser.js");
 const { body, validationResult } = require("express-validator");
 const sanitizeHtml = require("sanitize-html");
+const multer = require('multer');
+const path = require('path');
+// Multer configuration for file upload
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/');
+    },
+    filename: function (req, file, cb) {
+        cb(null, `${Date.now()}-${file.originalname}`);
+    }
+});
+const upload = multer({ storage: storage });
 
-// Route 1: Create a blog using POST "/api/blog/createblog". Login required
+// Route to create a blog
 router.post("/createblog",
+    fetchuser,
+    upload.single('thumbnail'),
     [
-        fetchuser,
         body("title", "Title is required").notEmpty(),
         body("date", "Date is required").notEmpty(),
         body("category", "Category is required").notEmpty(),
-        body("blog_thumbnail", "Thumbnail URL is required").notEmpty().isURL(),
-        body("blog_link", "Blog link is required").notEmpty().isURL(),
+        body("blogLink", "Blog link is required").notEmpty().isURL(),
     ],
     async (req, res) => {
         try {
@@ -22,23 +34,20 @@ router.post("/createblog",
                 return res.status(400).json({ errors: errors.array() });
             }
 
-            const { title, date, category, blog_thumbnail, blog_link } = req.body;
-            // Check if blog with the same title already exists
-            const existingBlog = await Blog.findOne({ title });
-            if (existingBlog) {
-                return res.status(400).json({ error: "Blog with this title already exists" });
-            }
-            // Sanitize user inputs
+            const { title, date, category, description, blogLink } = req.body;
+            const thumbnail = req.file.path.replace(/\\/g, "/");
+
             const sanitizedTitle = sanitizeHtml(title);
             const sanitizedCategory = sanitizeHtml(category);
 
-            // Create a new blog
             const newBlog = new Blog({
                 title: sanitizedTitle,
                 date,
                 category: sanitizedCategory,
-                blog_thumbnail,
-                blog_link
+                description,
+                blog_thumbnail: thumbnail,
+                blog_link: blogLink,
+                user: req.user.id
             });
 
             const savedBlog = await newBlog.save();
@@ -50,44 +59,48 @@ router.post("/createblog",
     }
 );
 
-// Route 2: Update a blog using PUT "/api/blog/updateblog". Login required
-router.put("/updateblog",
-    [
-        fetchuser,
-        body("title", "Title is required").notEmpty(),
-        body("date", "Date is required").notEmpty(),
-        body("category", "Category is required").notEmpty(),
-        body("blog_thumbnail", "Thumbnail URL is required").notEmpty().isURL(),
-        body("blog_link", "Blog link is required").notEmpty().isURL(),
-    ],
-    async (req, res) => {
-        try {
-            const errors = validationResult(req);
-            if (!errors.isEmpty()) {
-                return res.status(400).json({ errors: errors.array() });
-            }
-
-            const { title, date, category, blog_thumbnail, blog_link } = req.body;
-
-            // Sanitize user inputs
-            const sanitizedTitle = sanitizeHtml(title);
-            const sanitizedCategory = sanitizeHtml(category);
-
-            let blogToUpdate = await Blog.findOne({ title: sanitizedTitle });
-            if (!blogToUpdate) return res.status(404).send("Blog not found");
-
-            blogToUpdate = await Blog.findOneAndUpdate(
-                { title: sanitizedTitle },
-                { $set: { date, category: sanitizedCategory, blog_thumbnail, blog_link } },
-                { new: true }
-            );
-            res.json({ message: "Blog updated successfully", blog: blogToUpdate });
-        } catch (error) {
-            console.error(error.message);
-            res.status(500).send("Internal Server Error");
+// Route to update a blog
+router.put("/updateblog", fetchuser, upload.single('thumbnail'), [
+    body("title", "Title is required").notEmpty(),
+    body("date", "Date is required").notEmpty(),
+    body("category", "Category is required").notEmpty(),
+    body("blogLink", "Blog link is required").notEmpty().isURL(),
+], async (req, res) => {
+    try {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
         }
+
+        const { title, date, category, description, blogLink } = req.body;
+        const sanitizedTitle = sanitizeHtml(title);
+        const sanitizedCategory = sanitizeHtml(category);
+
+        let blogToUpdate = await Blog.findOne({ title: sanitizedTitle });
+        if (!blogToUpdate) return res.status(404).send("Blog not found");
+
+        const updateFields = {
+            date,
+            category: sanitizedCategory,
+            description,
+            blog_link: blogLink
+        };
+
+        if (req.file) {
+            updateFields.blog_thumbnail = req.file.path;
+        }
+
+        blogToUpdate = await Blog.findOneAndUpdate(
+            { title: sanitizedTitle },
+            { $set: updateFields },
+            { new: true }
+        );
+        res.json({ message: "Blog updated successfully", blog: blogToUpdate });
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
     }
-);
+});
 
 // Route 3: Delete a blog using DELETE "/api/blog/deleteblog". Login required
 router.delete("/deleteblog",
