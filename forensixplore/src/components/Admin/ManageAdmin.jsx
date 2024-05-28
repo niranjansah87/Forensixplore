@@ -1,20 +1,53 @@
-
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import AdminNavbar from './AdminNavbar';
-// import Footor from '../Footor';
-// import './assets/css/admin.css'
+import { useNavigate } from 'react-router-dom';
+
 function ManageAdmin() {
+    const [admins, setAdmins] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(0);
+    const navigate=useNavigate();
+    useEffect(() => {
+        const checkLoggedIn = async () => {
+            const token = localStorage.getItem('authToken');
+            if (!token) {
+                navigate('/admin/login');
+        return null; // Avoid rendering anything if not logged in
+            }
+
+            try {
+                const response = await axios.get('http://localhost:5001/admin/getuser', {
+                    headers: {
+                        'auth-token': token
+                    }
+                });
+                setAdmins(response.data);
+                setTotalPages(Math.ceil(response.data.length / 4));
+            } catch (error) {
+                console.error('Error fetching admins:', error);
+                // Handle error
+            }
+        };
+
+        checkLoggedIn();
+    }, []);
+
+    const handlePageChange = (page) => {
+        setCurrentPage(page);
+    };
+
     return (
         <>
-            <AdminNavbar></AdminNavbar>
+            <AdminNavbar />
             <div className="bgmi">
-        
-        <div className="dashboard">
-            <div className="containerdiv dashboard__container">
-                <button id="show__sidebar-btn" className="sidebar__toggle"><i className="uil uil-angle-right-b"></i></button>
-                <button id="hide__sidebar-btn" className="sidebar__toggle"><i className="uil uil-angle-left-b"></i></button>
+                <div className="dashboard">
+                    <div className="containerdiv dashboard__container">
+                        <button id="show__sidebar-btn" className="sidebar__toggle"><i className="uil uil-angle-right-b"></i></button>
+                        <button id="hide__sidebar-btn" className="sidebar__toggle"><i className="uil uil-angle-left-b"></i></button>
 
-                <aside>
+                        <aside>
                         <ul>
                             <li>
                                 <Link to="/add-blog">
@@ -28,12 +61,12 @@ function ManageAdmin() {
                                     <h5>Manage Blog</h5>
                                 </Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link to="/add-admin">
                                     <i className="uil uil-user-plus"></i>
                                     <h5>Add Admin</h5>
                                 </Link>
-                            </li>
+                            </li> */}
                             <li>
                                 <Link to="/manage-admin" className="active">
                                     <i className="uil uil-users-alt"></i>
@@ -65,36 +98,42 @@ function ManageAdmin() {
                                 </Link>
                             </li>
                         </ul>
-                    </aside>
+                        </aside>
 
-                <main>
-                    <h2>Manage Admin</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>ID Number</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
+                        <main>
+                            <h2>Manage Admin</h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>ID Number</th>
+                                        <th>Contact</th>
+                                        <th>Email</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {admins
+                                        .slice((currentPage - 1) * 4, currentPage * 4)
+                                        .map((admin, index) => (
+                                            <tr key={index}>
+                                                <td>{admin.name}</td>
+                                                <td>{admin.ID_NO}</td>
+                                                <td>{admin.contact}</td>
+                                                <td>{admin.email}</td>
+                                            </tr>
+                                        ))}
+                                </tbody>
+                            </table>
+                            <div className="pagination animated-pagination">
+                                <button disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>Previous</button>
                                 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            
-                            <tr>
-                                <td>Pikachu Guy</td>
-                                <td>Guy</td>
-                                <td><Link to="/edit-admin" className="btn sm">Edit</Link></td>
-                                <td><Link to="" className="btn sm danger">Delete</Link></td>
-                                
-                            </tr>
-                        </tbody>
-                    </table>
-                </main>
+                                <button disabled={currentPage === totalPages} onClick={() => handlePageChange(currentPage + 1)}>Next</button>
+                            </div>
+                        </main>
+                    </div>
+                </div>
             </div>
-        </div>
-        </div>
-        {/* <Footor></Footor> */}
         </>
     );
 }

@@ -27,12 +27,12 @@ function ManageFutureEvents() {
                                     <h5>Manage Blog</h5>
                                 </Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link to="/add-admin">
                                     <i className="uil uil-user-plus"></i>
                                     <h5>Add Admin</h5>
                                 </Link>
-                            </li>
+                            </li> */}
                             <li>
                                 <Link to="/manage-admin">
                                     <i className="uil uil-users-alt"></i>

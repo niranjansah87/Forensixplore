@@ -232,17 +232,19 @@ router.post("/logout", (req, res) => {
   res.clearCookie("authToken"); // Clear the authentication token cookie
   res.json({ message: "Logged out successfully" });
 });
-//Route 4: Fetch the user details using GET "api/auth/getuser". Login required
+//Route 4: Fetch the all user details using GET "api/auth/getuser". Login required
 router.get("/getuser", fetchuser, async (req, res) => {
   try {
-    const userId = req.user.id;
-    const user = await User.findById(userId).select("-password");
-    res.send(user);
+    const admins = await User.find();
+    res.json(admins);
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");
   }
 });
+
+
+
 //Route 5: Check whether user is logged in or not using GET "admin/checklogin". No login required
 router.get("/checklogin", fetchuser, (req, res) => {
   try {

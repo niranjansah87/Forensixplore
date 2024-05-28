@@ -33,12 +33,12 @@ function ManagePastEvents() {
                                     <h5>Add Admin</h5>
                                 </Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link to="/manage-admin">
                                     <i className="uil uil-users-alt"></i>
                                     <h5>Manage Admin</h5>
                                 </Link>
-                            </li>
+                            </li> */}
                             <li>
                                 <Link to="/add-past">
                                     <i className="uil uil-edit"></i>

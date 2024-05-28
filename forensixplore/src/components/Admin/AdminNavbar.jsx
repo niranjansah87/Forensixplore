@@ -1,19 +1,29 @@
-// Import useState and useNavigate
-import  { useState } from 'react';
-import { Link  } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 import logo from './assets/images/forensixplore.png';
 import avtar from './assets/images/Anonymous_Hacker.png';
 
 const AdminNavbar = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
-    
+    const navigate = useNavigate();
 
     const toggleNav = () => {
         setIsNavOpen(!isNavOpen);
     };
 
-  
+    const handleLogout = async () => {
+        try {
+            await axios.post('http://localhost:5001/admin/logout', {}, {
+                withCredentials: true // if you are using cookies for auth
+            });
+            localStorage.removeItem('authToken'); // Remove token from local storage
+            navigate('/admin/login'); // Redirect to login page
+        } catch (error) {
+            console.error('Error logging out:', error);
+        }
+    };
 
     return (
         <nav className="navh" style={{ backgroundColor: '#14192d' }}>
@@ -29,7 +39,7 @@ const AdminNavbar = () => {
                         </div>
                         <ul>
                             <li><Link to="/dashboard">Profile</Link></li>
-                            <li><Link >Logout</Link></li>
+                            <li><Link onClick={handleLogout} >Logout</Link></li>
                         </ul>
                     </li>
                 </ul>
