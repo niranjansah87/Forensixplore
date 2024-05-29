@@ -39,7 +39,10 @@ function Blog() {
       <div className="blog-container">
         <div className="card-header">
           <div className="card2">
-            {blogs.map(blog => (
+          {blogs.length === 0 ? (
+          <h1 className="no-events-message">Stay tuned for Blogs</h1>
+        ) : (
+            blogs.map(blog => (
               <div className="nft" key={blog._id}>
                 <div className='main'>
                   <img className='tokenImage' src={`http://localhost:5001/${blog.blog_thumbnail}`} alt={blog.title} />
@@ -54,7 +57,7 @@ function Blog() {
                   </div>
                 </div>
               </div>
-            ))}
+            )))}
           </div>
         </div>
       </div>
