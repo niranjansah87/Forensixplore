@@ -33,7 +33,6 @@ function AddPastEvent() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const token = localStorage.getItem('authToken');
-        console.log(token);
         if (!token) {
             navigate('/admin/login');
             return;
@@ -60,8 +59,13 @@ function AddPastEvent() {
                 navigate('/manage-past');
             }
         } catch (error) {
-            console.error('Error creating past event:', error);
-            swal('Error', 'There was an error creating the past event', 'error');
+            console.error('Error creating past event:', error.response ? error.response.data : error.message);
+            if (error.response && error.response.data && error.response.data.errors) {
+                const errorMessages = error.response.data.errors.map(err => err.msg).join(', ');
+                swal('Error', 'There was an error creating the past event: ' + errorMessages, 'error');
+            } else {
+                swal('Error', 'There was an error creating the past event', 'error');
+            }
         }
     };
 

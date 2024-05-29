@@ -59,7 +59,7 @@ router.post(
       };
 
       const authToken = jwt.sign(data, JWT_SECRET);
-      console.log(authToken);
+      // console.log(authToken);
       // Send signup confirmation email with OTP
       await sendSignupEmail(req.body.email, req.body.name, req.body.ID_NO);
       res.json({ message: "Signup confirmation email sent successfully", authToken });

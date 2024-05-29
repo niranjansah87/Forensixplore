@@ -9,14 +9,13 @@ const sanitizeHtml = require('sanitize-html');
 
 // Set up multer for file uploads
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'upload/past_Events');
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/past_events');
     },
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + path.extname(file.originalname));
+    filename: function (req, file, cb) {
+        cb(null, `${Date.now()}-${file.originalname}`);
     }
 });
-
 const upload = multer({ storage: storage });
 
 // Route to create a past event
@@ -37,8 +36,8 @@ router.post(
             }
 
             const { title, category, description, registrationLink } = req.body;
-            const eventPoster = req.file ? req.file.path : null;
-
+            const eventPoster = req.file.path.replace(/\\/g, "/");
+            
             // Check if past event with the same title already exists
             const existingEvent = await Event.findOne({ title });
             if (existingEvent) {
