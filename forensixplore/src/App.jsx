@@ -49,7 +49,7 @@ function App() {
           <Route exact path="/add-past" element={<AddPastEvent />} /> 
           <Route exact path="/add-future" element={<AddFutureEvent />} /> 
           <Route exact path="/admin" element={<AdminMain  />} /> 
-          <Route exact path="/edit-blog" element={<EditBlog />} />
+          <Route exact path="/edit-blog/:id" element={<EditBlog />} />
           <Route exact path="/edit-future" element={<EditFutureEvents />} /> 
           <Route exact path="/edit-past/:id" element={<EditPastEvents />} /> 
           <Route exact path="/edit-user" element={<EditUser />} /> 

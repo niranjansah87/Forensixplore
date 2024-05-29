@@ -24,6 +24,11 @@ const blogSchema = new mongoose.Schema({
         type: String,
         required: false,
         default: '/'
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        required:false,
+        ref: 'Admin' 
     }
 });
 

@@ -174,7 +174,7 @@ function AdminMain() {
                                             <td>{blog.title}</td>
                                             <td>{blog.category}</td>
                                             <td>{sliceDate(blog.date)}</td>
-                                            <td><Link to={`/edit-blog/`} className="btn sm">Edit</Link></td>
+                                            <td><Link to={`/edit-blog/${encodeURIComponent(blog._id)}`} className="btn sm">Edit</Link></td>
                                             <td><button onClick={() => deleteBlog(blog.title)} className="btn sm danger">Delete</button></td>
                                         </tr>
                                     ))}
