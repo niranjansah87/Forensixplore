@@ -26,7 +26,7 @@ router.post(
         upload.single('eventPoster'), // Use multer middleware to handle the file upload
         body('title', 'Title is required').notEmpty(),
         body('category', 'Category is required').notEmpty().isIn(['TEC', 'HWB', 'ESO', 'LCH', 'IIE']),
-        body('registrationLink', 'Registration link must be a valid URL').optional().isURL()
+        body('registrationLink', 'Registration link must be a valid URL').optional()
     ],
     async (req, res) => {
         try {
@@ -68,13 +68,13 @@ router.post(
 
 
 
-// Route 2: Update a past event using PUT "/event/updatepastevent/:id". Login required
+// Route 2: Update a past event using PUT "/pevent/updatepastevent/". Login required
 router.put("/updatepastevent/:id",
     [
         fetchuser,
+        upload.single('eventPoster'), // Multer middleware to handle single file upload
         body("title", "Title is required").notEmpty(),
         body("category", "Category is required").notEmpty().isIn(['TEC', 'HWB', 'ESO', 'LCH', 'IIE']),
-        body("eventPoster", "Event poster URL is required").notEmpty().isURL(),
         body("registrationLink", "Registration link must be a valid URL").optional().isURL(),
     ],
     async (req, res) => {
@@ -84,28 +84,35 @@ router.put("/updatepastevent/:id",
                 return res.status(400).json({ errors: errors.array() });
             }
 
-            const { title, category, eventPoster, registrationLink } = req.body;
+            const { title, category, registrationLink } = req.body;
+            const eventPoster = req.file ? req.file.path.replace(/\\/g, "/") : undefined;
 
             // Sanitize user inputs
             const sanitizedTitle = sanitizeHtml(title);
             const sanitizedCategory = sanitizeHtml(category);
 
             let eventToUpdate = await Event.findById(req.params.id);
-            if (!eventToUpdate) return res.status(404).send("Event not found");
+            if (!eventToUpdate) {
+                console.error("Event not found");
+                return res.status(404).send("Event not found");
+            }
 
             eventToUpdate.title = sanitizedTitle;
             eventToUpdate.category = sanitizedCategory;
-            eventToUpdate.eventPoster = eventPoster;
+            if (eventPoster) {
+                eventToUpdate.eventPoster = eventPoster;
+            }
             eventToUpdate.registrationLink = registrationLink;
 
             const updatedEvent = await eventToUpdate.save();
             res.json(updatedEvent);
         } catch (error) {
-            console.error(error.message);
+            console.error("Error updating event:", error.message);
             res.status(500).send("Internal Server Error");
         }
     }
 );
+
 
 // Route 3: Delete a past event using DELETE "/event/deletepastevent/:id". Login required
 router.delete("/deletepastevent/:id",

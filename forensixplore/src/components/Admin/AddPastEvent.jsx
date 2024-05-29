@@ -93,7 +93,7 @@ function AddPastEvent() {
                             <textarea rows="2" placeholder="Enter the Description" name="description" value={formData.description} onChange={handleChange} required></textarea>
                             <div className="form__control">
                                 <label htmlFor="thumbnail">Event Poster</label>
-                                <input type="file" id="thumbnail" name="eventPoster" onChange={handleFileChange} required />
+                                <input type="file" id="thumbnail" name="eventPoster" onChange={handleFileChange} />
                             </div>
                             <label>Registration Link</label>
                             <input type="text" placeholder="Enter the Registration Link" name="registrationLink" value={formData.registrationLink} onChange={handleChange} />

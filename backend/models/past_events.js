@@ -25,6 +25,7 @@ const pastEventsSchema = new mongoose.Schema({
     eventPoster: {
         type: String,
         required: false,
+        default:'https://tamanmini.com/taman_jelajah_indonesia/wp-content/uploads/2023/08/event-dummy.png'
     },
     registrationLink: {
         type: String,

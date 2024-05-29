@@ -12,7 +12,7 @@ function ManagePastEvents() {
     useEffect(() => {
         const checkLoggedIn = async () => {
             const token = localStorage.getItem('authToken');
-            console.log(token);
+            
             if (!token) {
                 navigate('/admin/login');
                 return;
@@ -125,6 +125,7 @@ function ManagePastEvents() {
                                                 <td>{event.title}</td>
                                                 <td>{event.category}</td>
                                                 <td><Link to={`/edit-past/${event._id}`} className="btn sm">Edit</Link></td>
+
                                                 <td><button onClick={() => handleDelete(event._id)} className="btn sm danger">Delete</button></td>
                                             </tr>
                                         ))}
