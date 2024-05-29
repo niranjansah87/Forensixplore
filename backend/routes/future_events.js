@@ -6,15 +6,28 @@ const { body, param, validationResult } = require("express-validator");
 const sanitizeHtml = require("sanitize-html");
 const fetchuser = require("../middleware/fetchuser.js");
 const FutureEvent = require("../models/future_events");
+const multer = require('multer');
+const fs = require('fs');
+const path = require('path');
 
+// Set up multer for file uploads
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/future_Events');
+    },
+    filename: function (req, file, cb) {
+        cb(null, `${Date.now()}-${file.originalname}`);
+    }
+});
+const upload = multer({ storage: storage });
 // Route 1: Create a future event using POST "/event/createfutureevent". Login required
 router.post("/createfutureevent",
     [
         fetchuser,
+        upload.single('eventPoster'), // Multer middleware to handle single file upload
         body("title", "Title is required").notEmpty(),
         body("date", "Date is required").notEmpty().isISO8601(),
         body("category", "Category is required").notEmpty().isIn(['TEC', 'HWB', 'ESO', 'LCH', 'IIE']),
-        body("eventPoster", "Event poster URL is required").optional().isURL(),
         body("registrationLink", "Registration link must be a valid URL").optional().isURL(),
     ],
     async (req, res) => {
@@ -24,7 +37,8 @@ router.post("/createfutureevent",
                 return res.status(400).json({ errors: errors.array() });
             }
 
-            const { title, date, category,description, eventPoster, registrationLink } = req.body;
+            const { title, date, category, description, registrationLink } = req.body;
+            const eventPoster = req.file.path.replace(/\\/g, "/");
 
             // Sanitize user inputs
             const sanitizedTitle = sanitizeHtml(title);
@@ -44,6 +58,10 @@ router.post("/createfutureevent",
             res.json({ message: "Future event created successfully", event: savedFutureEvent });
         } catch (error) {
             console.error(error.message);
+            if (req.file) {
+                // If there was an error and the file was uploaded, delete the file
+                fs.unlinkSync(path.join(__dirname, '..', req.file.path));
+            }
             res.status(500).send("Internal Server Error");
         }
     }
