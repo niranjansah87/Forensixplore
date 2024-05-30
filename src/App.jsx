@@ -34,28 +34,28 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={<Home />} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/team" element={<Team />} />
-        <Route exact path="/blog" element={<Blog />} />
-        <Route exact path="/past" element={<Past_Events />} />
-        <Route exact path="/future" element={<Future_Events />} />
-        <Route exact path="/admin/login" element={<Login/>} /> 
+        <Route path="/about" element={<About />} />
+        <Route path="/team" element={<Team />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/past" element={<Past_Events />} />
+        <Route path="/future" element={<Future_Events />} />
+        <Route path="/admin/login" element={<Login/>} /> 
         
         
 
         {/* Admin Route Start */}
-        <Route exact path="/add-admin" element={<AddAdmin />} />
-          <Route exact path="/add-blog" element={<AddBlog />} /> 
-          <Route exact path="/add-past" element={<AddPastEvent />} /> 
-          <Route exact path="/add-future" element={<AddFutureEvent />} /> 
-          <Route exact path="/admin" element={<AdminMain  />} /> 
-          <Route exact path="/edit-blog/:id" element={<EditBlog />} />
-          <Route exact path="/edit-future/:id" element={<EditFutureEvents />} />
-          <Route exact path="/edit-past/:id" element={<EditPastEvents />} /> 
-          <Route exact path="/edit-user" element={<EditUser />} />
-          <Route exact path="/manage-admin" element={<ManageAdmin />} /> 
-          <Route exact path="/manage-past" element={<ManagePastEvents />} /> 
-          <Route exact path="/manage-future" element={<ManageFutureEvents />} /> 
+        <Route path="/add-admin" element={<AddAdmin />} />
+          <Route path="/add-blog" element={<AddBlog />} /> 
+          <Route path="/add-past" element={<AddPastEvent />} /> 
+          <Route path="/add-future" element={<AddFutureEvent />} /> 
+          <Route path="/admin" element={<AdminMain  />} /> 
+          <Route path="/edit-blog/:id" element={<EditBlog />} />
+          <Route path="/edit-future/:id" element={<EditFutureEvents />} />
+          <Route path="/edit-past/:id" element={<EditPastEvents />} /> 
+          <Route path="/edit-user" element={<EditUser />} />
+          <Route path="/manage-admin" element={<ManageAdmin />} /> 
+          <Route path="/manage-past" element={<ManagePastEvents />} /> 
+          <Route path="/manage-future" element={<ManageFutureEvents />} /> 
           
         {/* Admin Route End */}
       </Routes>
