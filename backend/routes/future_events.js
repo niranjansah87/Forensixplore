@@ -67,15 +67,16 @@ router.post("/createfutureevent",
     }
 );
 
-// Route 2: Update a future event using PUT "/event/updatefutureevent/:id". Login required
+// Route 2: Update a future event using PUT "/fevent/updatefutureevent/:id". Login required
 router.put("/updatefutureevent/:id",
     [
         fetchuser,
+        upload.single('eventPoster'),
         param("id", "Invalid event ID").isMongoId(),
         body("title", "Title is required").notEmpty(),
         body("date", "Date is required").notEmpty().isISO8601(),
         body("category", "Category is required").notEmpty().isIn(['TEC', 'HWB', 'ESO', 'LCH', 'IIE']),
-        body("eventPoster", "Event poster URL is required").notEmpty().isURL(),
+        // body("eventPoster", "Event poster URL is required").notEmpty().isURL(),
         body("registrationLink", "Registration link must be a valid URL").optional().isURL(),
     ],
     async (req, res) => {
@@ -86,7 +87,8 @@ router.put("/updatefutureevent/:id",
             }
 
             const eventId = req.params.id;
-            const { title, date, category, eventPoster, registrationLink } = req.body;
+            const { title, date, category, registrationLink } = req.body;
+            const eventPoster = req.file ? req.file.path.replace(/\\/g, "/") : undefined;
 
             // Sanitize user inputs
             const sanitizedTitle = sanitizeHtml(title);

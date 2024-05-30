@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import AdminNavbar from './AdminNavbar';
-
+import { useNavigate } from 'react-router-dom';
 
 function AddFutureEvent() {
     const [formData, setFormData] = useState({
@@ -13,7 +13,7 @@ function AddFutureEvent() {
         eventPoster: null,
         registrationLink: ''
     });
-
+    const navigate = useNavigate();
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -59,6 +59,7 @@ function AddFutureEvent() {
                     registrationLink: ''
                 });
                 Swal.fire('Success', 'Event added successfully', 'success');
+                navigate('/manage-future');
             }
         } catch (error) {
             console.error('Error adding event:', error.response ? error.response.data : error.message);
