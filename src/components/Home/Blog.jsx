@@ -10,7 +10,7 @@ const Blog = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/blog/getblog');
+      const response = await axios.get('https://forensixplore-backend.onrender.com/blog/getblog');
       const shuffledBlogs = shuffleArray(response.data.slice(0, 3)); // Limit to 3 blogs and shuffle
       setBlogs(shuffledBlogs);
     } catch (error) {
@@ -43,7 +43,7 @@ const Blog = () => {
           {blogs.map(blog => (
             <div key={blog._id} className="col-lg-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
               <div className="single_blog">
-                <img src={blog.blog_thumbnail} className="img-fluid" alt="Blog Thumbnail" />
+                <img src={`https://forensixplore-backend.onrender.com/${blog.blog_thumbnail}`} className="img-fluid" alt="Blog Thumbnail" />
                 <span><a href="/">{blog.category}</a></span>
                 <span>{sliceDate(blog.date)}</span>
                 <h3><a href="/">{blog.title}</a></h3>
