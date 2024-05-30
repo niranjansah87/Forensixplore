@@ -19,7 +19,7 @@ function EditPastEvents() {
     useEffect(() => {
         const fetchEventData = async () => {
             try {
-                const response = await axios.get(`http://localhost:5001/pevent/getpastevent/${id}`);
+                const response = await axios.get(`https://forensixplore-backend.onrender.com/pevent/getpastevent/${id}`);
                 setFormData({
                     title: response.data.title,
                     date: response.data.date,
@@ -69,7 +69,7 @@ function EditPastEvents() {
         formDataToSend.append('registrationLink', formData.registrationLink);
 
         try {
-            const response = await axios.put(`http://localhost:5001/pevent/updatepastevent/${id}`, formDataToSend, {
+            const response = await axios.put(`https://forensixplore-backend.onrender.com/pevent/updatepastevent/${id}`, formDataToSend, {
                 headers: {
                     'auth-token': token,
                     'Content-Type': 'multipart/form-data'

@@ -19,7 +19,7 @@ function ManagePastEvents() {
             }
 
             try {
-                const response = await axios.get('http://localhost:5001/pevent/getpastevents', {
+                const response = await axios.get('https://forensixplore-backend.onrender.com/pevent/getpastevents', {
                     params: { page: currentPage, limit: 4 }, // Fetch 4 events per page
                     headers: { 'auth-token': token }
                 });
@@ -40,7 +40,7 @@ function ManagePastEvents() {
     const handleDelete = async (id) => {
         const token = localStorage.getItem('authToken');
         try {
-            await axios.delete(`http://localhost:5001/pevent/deletepastevent/${id}`, {
+            await axios.delete(`https://forensixplore-backend.onrender.com/pevent/deletepastevent/${id}`, {
                 headers: { 'auth-token': token }
             });
             setEvents(events.filter(event => event._id !== id));

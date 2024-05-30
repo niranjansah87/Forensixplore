@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import swal from 'sweetalert';
+import Swal from 'sweetalert2';
 import AdminNavbar from './AdminNavbar';
+import { useNavigate } from 'react-router-dom';
 
-function AddPastEvent() {
+function AddFutureEvent() {
     const [formData, setFormData] = useState({
         title: '',
         date: '',
@@ -14,7 +14,6 @@ function AddPastEvent() {
         registrationLink: ''
     });
     const navigate = useNavigate();
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -32,22 +31,17 @@ function AddPastEvent() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const token = localStorage.getItem('authToken');
-        if (!token) {
-            navigate('/admin/login');
-            return;
-        }
-
-        const formDataToSend = new FormData();
-        formDataToSend.append('title', formData.title);
-        formDataToSend.append('date', formData.date);
-        formDataToSend.append('category', formData.category);
-        formDataToSend.append('description', formData.description);
-        formDataToSend.append('eventPoster', formData.eventPoster);
-        formDataToSend.append('registrationLink', formData.registrationLink);
-
         try {
-            const response = await axios.post('http://localhost:5001/pevent/createpastevent', formDataToSend, {
+            const token = localStorage.getItem('authToken');
+            const formDataToSend = new FormData();
+            formDataToSend.append('title', formData.title);
+            formDataToSend.append('date', formData.date);
+            formDataToSend.append('category', formData.category);
+            formDataToSend.append('description', formData.description);
+            formDataToSend.append('eventPoster', formData.eventPoster);
+            formDataToSend.append('registrationLink', formData.registrationLink);
+
+            const response = await axios.post(`https://forensixplore-backend.onrender.com/fevent/createfutureevent`, formDataToSend, {
                 headers: {
                     'auth-token': token,
                     'Content-Type': 'multipart/form-data'
@@ -55,17 +49,21 @@ function AddPastEvent() {
             });
 
             if (response.status === 200) {
-                swal('Success', 'Past event created successfully', 'success');
-                navigate('/manage-past');
+                // Clear form fields after successful submission
+                setFormData({
+                    title: '',
+                    date: '',
+                    category: 'TEC',
+                    description: '',
+                    eventPoster: null,
+                    registrationLink: ''
+                });
+                Swal.fire('Success', 'Event added successfully', 'success');
+                navigate('/manage-future');
             }
         } catch (error) {
-            console.error('Error creating past event:', error.response ? error.response.data : error.message);
-            if (error.response && error.response.data && error.response.data.errors) {
-                const errorMessages = error.response.data.errors.map(err => err.msg).join(', ');
-                swal('Error', 'There was an error creating the past event: ' + errorMessages, 'error');
-            } else {
-                swal('Error', 'There was an error creating the past event', 'error');
-            }
+            console.error('Error adding event:', error.response ? error.response.data : error.message);
+            Swal.fire('Error', 'Error adding event', 'error');
         }
     };
 
@@ -106,4 +104,4 @@ function AddPastEvent() {
     );
 }
 
-export default AddPastEvent;
+export default AddFutureEvent;

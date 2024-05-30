@@ -18,7 +18,7 @@ function AdminMain() {
             if (token) {
                 try {
                     // Verify token validity on the server
-                    const response = await axios.get('http://localhost:5001/admin/checklogin', {
+                    const response = await axios.get('https://forensixplore-backend.onrender.com/admin/checklogin', {
                         headers: {
                             'auth-token': token,
                         },
@@ -44,7 +44,7 @@ function AdminMain() {
 
         const fetchBlogs = async () => {
             try {
-                const response = await axios.get('http://localhost:5001/blog/getblog');
+                const response = await axios.get('https://forensixplore-backend.onrender.com/blog/getblog');
                 setBlogs(response.data);
             } catch (error) {
                 console.error('Error fetching blogs:', error);
@@ -63,7 +63,7 @@ function AdminMain() {
                 return;
             }
             
-            const response = await axios.delete(`http://localhost:5001/blog/deleteblog`, {
+            const response = await axios.delete(`https://forensixplore-backend.onrender.com/blog/deleteblog`, {
                 headers: {
                     'auth-token': token // Include authentication token in request headers
                 },

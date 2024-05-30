@@ -24,7 +24,7 @@ function EditFutureEvents() {
                 return;
             }
             try {
-                const response = await axios.get(`http://localhost:5001/fevent/getfutureevent/${id}`, {
+                const response = await axios.get(`https://forensixplore-backend.onrender.com/fevent/getfutureevent/${id}`, {
                     headers: { 'auth-token': token }
                 });
                 setEvent(response.data);
@@ -60,7 +60,7 @@ function EditFutureEvents() {
         formData.append('registrationLink', event.registrationLink);
 
         try {
-            await axios.put(`http://localhost:5001/fevent/updatefutureevent/${id}`, formData, {
+            await axios.put(`https://forensixplore-backend.onrender.com/fevent/updatefutureevent/${id}`, formData, {
                 headers: {
                     'auth-token': token,
                     'Content-Type': 'multipart/form-data'

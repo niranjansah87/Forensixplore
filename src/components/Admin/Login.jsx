@@ -12,7 +12,7 @@ const Login = () => {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      const response = await axios.post('http://localhost:5001/admin/login', data);
+      const response = await axios.post('https://forensixplore-backend.onrender.com/admin/login', data);
       const { authToken } = response.data;
       console.log("Success");
       localStorage.setItem('authToken', authToken);

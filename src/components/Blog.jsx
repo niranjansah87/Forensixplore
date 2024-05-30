@@ -45,7 +45,7 @@ function Blog() {
             blogs.map(blog => (
               <div className="nft" key={blog._id}>
                 <div className='main'>
-                  <img className='tokenImage' src={`http://localhost:5001/${blog.blog_thumbnail}`} alt={blog.title} />
+                  <img className='tokenImage' src={`https://forensixplore-backend.onrender.com/${blog.blog_thumbnail}`} alt={blog.title} />
                   <h5 className="date2">{sliceDate(blog.date)}</h5>
                   <h5 className="catagory">{blog.category}</h5>
                   <h2 className="title">{blog.title}</h2>

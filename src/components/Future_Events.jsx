@@ -10,7 +10,7 @@ function Future_Events() {
   useEffect(() => {
     const fetchFutureEvents = async () => {
       try {
-        const response = await axios.get('http://localhost:5001/fevent/getfutureevents');
+        const response = await axios.get('https://forensixplore-backend.onrender.com/fevent/getfutureevents');
         setFutureEvents(response.data);
       } catch (error) {
         console.error(error);
@@ -43,7 +43,7 @@ function Future_Events() {
           futureEvents.map((event) => (
             <div className="news-card" key={event._id}>
               <a href={event.registrationLink} className="news-card__card-link"></a>
-              <img src={`http://localhost:5001/${event.eventPoster}`} alt="" className="news-card__image" />
+              <img src={`https://forensixplore-backend.onrender.com/${event.eventPoster}`} alt="" className="news-card__image" />
               <div className="news-card__text-wrapper">
                 <h2 className="news-card__title">{event.title}</h2>
                 <div className="news-card__post-date">{event.date.slice(0, 10)}</div>
