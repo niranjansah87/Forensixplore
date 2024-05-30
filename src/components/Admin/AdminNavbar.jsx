@@ -15,9 +15,14 @@ const AdminNavbar = () => {
 
     const handleLogout = async () => {
         try {
+            const token = localStorage.getItem('authToken');
+
             await axios.post('https://forensixplore-backend.onrender.com/admin/logout', {}, {
-                withCredentials: true // if you are using cookies for auth
-            });
+            headers: {
+                'auth-token': token
+            },
+            withCredentials: true, // Include credentials in the request
+        });
             localStorage.removeItem('authToken'); // Remove token from local storage
             navigate('/admin/login'); // Redirect to login page
         } catch (error) {
