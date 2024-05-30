@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "concurrently \"cd backend && nodemon server.js\" \"cd forensixplore && npm run dev\"",
+    "start": "concurrently \"cd backend && nodemon index.js\" \"cd forensixplore && npm run dev\"",
     "backend": "cd backend && nodemon index.js",
     "frontend": "cd forensixplore && npm run dev"
   },
