@@ -1,60 +1,52 @@
-/* *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
-
-
-/* html, body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: "Roboto", sans-serif;
-  font-size:1.2rem;
-} */
-
 .bg {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Full height of the viewport */
+  height: 100vh;
+  
   width: 100%;
+  padding: 20px; /* Add padding for smaller screens */
 }
 
-
-  .img {
- height: 100%;
- width: 100%;
+.img {
+  position: absolute; /* Absolute position to cover the background */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* max-width: 600px;  */
   border-radius: 20px;
   background: url('../images/bg.jpg') no-repeat center center fixed;
-  background-size: cover; /* Cover the entire container */
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-
-.box{
-height: 50%;
-width: 26%;  
-backdrop-filter: blur(27px);
-border: solid 1px #ed0c0ca6;
-border-radius: 15px;
+.box {
+  width: 100%;
+  max-width: 400px; /* Constrain the box width */
+  backdrop-filter: blur(27px);
+  border: solid 1px #ed0c0ca6;
+  border-radius: 15px;
+  padding: 20px; /* Add padding to the box */
 }
 
-.content{
-  width:90%;
+.content {
+  width: 100%;
   height: 100%;
   margin: 0 auto;
-  padding: 20px 0px;
+  padding: 20px 0;
 }
-.text{
+
+.text {
   text-align: center;
   padding-bottom: 10px;
   color: white;
+  font-size: 1.5em; /* Responsive font size */
 }
-input{
+
+input {
   width: 100%;
   height: 45px;
   margin-bottom: 15px;
@@ -63,27 +55,32 @@ input{
   background-color: transparent;
   outline: none;
   padding: 0 15px;
-  color: rgb(255, 255, 255);
-}
-::placeholder{
   color: white;
-  font-size: 15px;
+  font-size: 1em; /* Responsive font size */
 }
-.forget{
+
+::placeholder {
+  color: white;
+  font-size: 1em; /* Responsive font size */
+}
+
+.forget {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  font-size: 15px;
+  font-size: 1em; /* Responsive font size */
   color: rgba(255, 255, 255, 0.89);
 }
-.forget input{
+
+.forget input {
   height: 13px;
   width: 13px;
   margin-right: 5px;
   border: none;
   border-radius: 4px;
 }
-button{
+
+button {
   margin-top: 25px;
   width: 100%;
   height: 47px;
@@ -91,25 +88,55 @@ button{
   border-radius: 30px;
   border: none;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 1em; /* Responsive font size */
   transition: all 0.3s ease-in-out;
 }
-.pass{
-  font-size: 13px;
+
+.pass, span {
+  font-size: 1em; /* Responsive font size */
   color: rgba(255, 255, 255, 0.89);
   text-align: center;
 }
-span{
-  font-size: 13px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.89);
-text-align: center;
-}
-button:hover{
+
+button:hover {
   background: linear-gradient(325deg, rgba(222,2,216,0.9836309523809523) 0%, rgba(96,0,156,1) 100%);
   color: white;
   border: solid 1px white;
-  transform: none;
   box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.603);
   cursor: pointer;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .img {
+    padding: 20px;
+  }
+
+  .box {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .text {
+    font-size: 1.2em;
+  }
+
+  input, button {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .box {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .text {
+    font-size: 1em;
+  }
+
+  input, button {
+    font-size: 0.8em;
+  }
 }
