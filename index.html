@@ -1,56 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <!-- Meta tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Favicon -->
-    <link rel="icon" href="/assets/img/forensixplore favicon.png" type="image/x-icon">
-    
+    <link
+      rel="icon"
+      href="/assets/img/forensixplore favicon.png"
+      type="image/x-icon"
+    />
+
     <!-- Title -->
     <title>Forensixplore</title>
-    
+
     <!-- Font Awesome -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css" />
+
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/fonts/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/themify-icons.css">
-    <link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.css">
-    <link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.css">
-    <link rel="stylesheet" href="assets/css/jquery-simple-mobilemenu.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    
+    <link rel="stylesheet" href="assets/fonts/fontawesome.min.css" />
+    <link rel="stylesheet" href="assets/fonts/themify-icons.css" />
+    <link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.css" />
+    <link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.css" />
+    <link rel="stylesheet" href="assets/css/jquery-simple-mobilemenu.css" />
+    <link rel="stylesheet" href="assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Loader -->
     <div class="loader">
-        <video autoplay muted id="loader-video">
-            <source src="./assets/loader.mp4" type="video/mp4" />
-        </video>
+      <video autoplay muted id="loader-video">
+        <source src="./assets/loader.mp4" type="video/mp4" />
+      </video>
     </div>
-    
+
     <!-- Content -->
     <div id="content" style="display: none">
-        <div id="root"></div>
+      <div id="root"></div>
     </div>
 
     <!-- JavaScript files -->
-    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script type="module" src="assets/js/jquery-1.12.4.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/modernizr-2.8.3.min.js"></script>
     <script src="assets/js/jquery-simple-mobilemenu.js"></script>
@@ -58,25 +68,25 @@
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <script src="assets/js/jquery.inview.min.js"></script>
     <script src="assets/js/scrolltopcontrol.js"></script>
-    <script src="assets/js/superMarquee.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
+    <script type="module" src="assets/js/superMarquee.min.js"></script>
+    <script type="module" src="assets/js/wow.min.js"></script>
+    <script type="module" src="assets/js/scripts.js"></script>
 
     <!-- Main React component -->
     <script type="module" src="/src/main.jsx"></script>
 
     <!-- Loader script -->
     <script>
-        window.addEventListener("DOMContentLoaded", () => {
-            const loaderVideo = document.getElementById("loader-video");
-            const content = document.getElementById("content");
+      window.addEventListener("DOMContentLoaded", () => {
+        const loaderVideo = document.getElementById("loader-video");
+        const content = document.getElementById("content");
 
-            loaderVideo.addEventListener("ended", () => {
-                const loader = document.querySelector(".loader");
-                loader.style.display = "none";
-                content.style.display = "block";
-            });
+        loaderVideo.addEventListener("ended", () => {
+          const loader = document.querySelector(".loader");
+          loader.style.display = "none";
+          content.style.display = "block";
         });
+      });
     </script>
-</body>
+  </body>
 </html>

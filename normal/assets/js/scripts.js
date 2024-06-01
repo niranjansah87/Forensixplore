@@ -1,3 +1,6 @@
+import jQuery from 'jquery';
+import { SuperMarquee } from 'super-marquee'; // Import the SuperMarquee class
+import WOW from 'wow.js';
 
 
 
@@ -33,7 +36,7 @@
     /* START COUNTDOWN JS*/
     $(".counter_feature").on(
       "inview",
-      function (event, visible, visiblePartX, visiblePartY) {
+      function (event, visible, ) {
         if (visible) {
           $(this)
             .find(".counter-num")
@@ -89,6 +92,7 @@
 /*START MARQUEE JS*/
 let lastTime = new Date().getTime(),
   currentTime = 0,
+  // eslint-disable-next-line no-unused-vars
   counter = 0;
 
 const myScroller1 = new SuperMarquee(document.getElementById("supermarquee1"), {
@@ -96,6 +100,7 @@ const myScroller1 = new SuperMarquee(document.getElementById("supermarquee1"), {
     "*Ethical Hacking and Penetration Testing* &nbsp &nbsp  *Security Best Practices* &nbsp &nbsp  *Legal and Ethical Considerations*  &nbsp &nbsp  *Real-World Case Studies and Scenarios* &nbsp &nbsp  *Cybersecurity Fundamentals* &nbsp &nbsp",
 });
 
+let delta; // Declare the delta variable
 function loop() {
   window.requestAnimationFrame(loop);
   currentTime = new Date().getTime();
