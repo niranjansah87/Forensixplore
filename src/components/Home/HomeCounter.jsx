@@ -27,25 +27,25 @@ const HomeCounter = () => {
           <div className="row text-center">
             <div className="col-lg-3 col-sm-6 col-xs-12 no-padding">
               <div className="single-project">
-                <h2 className="counter-num">5</h2>
+                <h2 className="counter-num">10+</h2>
                 <h4>Number of Mentors</h4>
               </div>
             </div>
             <div className="col-lg-3 col-sm-6 col-xs-12 no-padding">
               <div className="single-project">
-                <h2 className="counter-num">40</h2>
+                <h2 className="counter-num">40+</h2>
                 <h4>Events Conducted</h4>
               </div>
             </div>
             <div className="col-lg-3 col-sm-6 col-xs-12 no-padding">
               <div className="single-project">
-                <h2 className="counter-num">484</h2>
+                <h2 className="counter-num">500+</h2>
                 <h4>Our Club Members</h4>
               </div>
             </div>
             <div className="col-lg-3 col-sm-6 col-xs-12 no-padding">
               <div className="single-project">
-                <h2 className="counter-num">10</h2>
+                <h2 className="counter-num">10+</h2>
                 <h4>Project Completed</h4>
               </div>
             </div>
