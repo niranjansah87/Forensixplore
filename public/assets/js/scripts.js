@@ -1,7 +1,6 @@
-
-
-
-
+import jQuery from 'jquery';
+import WOW from 'wow.js';
+import SuperMarquee from 'super-marquee'; // Import the SuperMarquee class
 
 (function ($) {
   "use strict";
@@ -33,7 +32,7 @@
     /* START COUNTDOWN JS*/
     $(".counter_feature").on(
       "inview",
-      function (event, visible, visiblePartX, visiblePartY) {
+      function (event, visible, ) {
         if (visible) {
           $(this)
             .find(".counter-num")
@@ -87,33 +86,29 @@
 })(jQuery);
 
 /*START MARQUEE JS*/
-let lastTime = new Date().getTime(),
-  currentTime = 0,
-  counter = 0;
+document.addEventListener('DOMContentLoaded', function () {
+  const marqueeElement = document.getElementById("supermarquee1");
+  
+  if (marqueeElement) {
+    const myScroller1 = new SuperMarquee(marqueeElement, {
+      content:
+        "*Ethical Hacking and Penetration Testing* &nbsp &nbsp  *Security Best Practices* &nbsp &nbsp  *Legal and Ethical Considerations*  &nbsp &nbsp  *Real-World Case Studies and Scenarios* &nbsp &nbsp  *Cybersecurity Fundamentals* &nbsp &nbsp",
+    });
 
-const myScroller1 = new SuperMarquee(document.getElementById("supermarquee1"), {
-  content:
-    "*Ethical Hacking and Penetration Testing* &nbsp &nbsp  *Security Best Practices* &nbsp &nbsp  *Legal and Ethical Considerations*  &nbsp &nbsp  *Real-World Case Studies and Scenarios* &nbsp &nbsp  *Cybersecurity Fundamentals* &nbsp &nbsp",
+    let lastTime = new Date().getTime(),
+      currentTime = 0;
+
+    // eslint-disable-next-line no-inner-declarations
+    function loop() {
+      window.requestAnimationFrame(loop);
+      currentTime = new Date().getTime();
+      const delta = (currentTime - lastTime) / 9000;
+      myScroller1.setPerspective('{ "rotateY" : ' + 30 * Math.sin(delta) + "}");
+    }
+
+    loop();
+  } else {
+    console.error('Element with ID "supermarquee1" not found.');
+  }
 });
-
-function loop() {
-  window.requestAnimationFrame(loop);
-  currentTime = new Date().getTime();
-  delta = (currentTime - lastTime) / 9000;
-  myScroller1.setPerspective('{ "rotateY" : ' + 30 * Math.sin(delta) + "}");
-}
-
-loop();
 /*END MARQUEE JS*/
-
-
-
-
-
-
-
-
-
-
-
-
