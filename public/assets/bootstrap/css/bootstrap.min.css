@@ -653,8 +653,9 @@ progress {
   content: "— ";
 }
 .img-fluid {
-  max-width: 90%;
+  width: 90%;
   height: auto;
+  object-fit: cover;
 }
 .img-fluid2 {
   width: 200px; /* Adjust the width to your desired fixed size */
