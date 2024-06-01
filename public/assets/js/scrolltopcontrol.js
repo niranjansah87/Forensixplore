@@ -1,3 +1,4 @@
+import jQuery from 'jquery'; // Import the jQuery library
 //** jQuery Scroll to Top Control script- (c) Dynamic Drive DHTML code library: http://www.dynamicdrive.com.
 //** Available/ usage terms at http://www.dynamicdrive.com (March 30th, 09')
 //** v1.1 (April 7th, 09'):
@@ -110,7 +111,7 @@ var scrolltotop = {
         mainobj.scrollup();
         return false;
       });
-      $(window).bind("scroll resize", function (e) {
+      $(window).bind("scroll resize", function () {
         mainobj.togglecontrol();
       });
     });
