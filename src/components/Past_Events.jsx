@@ -10,7 +10,7 @@ function Past_Events() {
   useEffect(() => {
     const fetchPastEvents = async () => {
       try {
-        const response = await axios.get('https://forensixplore-backend.onrender.com/pevent/getpastevents');
+        const response = await axios.get('https://forensixplore-backend-production.up.railway.app/pevent/getpastevents');
         setPastEvents(response.data);
       } catch (error) {
         console.error(error);
@@ -43,7 +43,7 @@ function Past_Events() {
         pastEvents.map((event) => (
           <div className="news-card" key={event._id}>
             <a href={event.registrationLink} className="news-card__card-link"></a>
-            <img src={`https://forensixplore-backend.onrender.com/${event.eventPoster}`} alt="" className="news-card__image" />
+            <img src={`https://forensixplore-backend-production.up.railway.app/${event.eventPoster}`} alt="" className="news-card__image" />
             
             <div className="news-card__text-wrapper">
               <h2 className="news-card__title">{event.title}</h2>

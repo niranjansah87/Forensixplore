@@ -28,7 +28,7 @@ function EditBlog() {
 
     const fetchBlogData = async (blogId) => {
         try {
-            const response = await axios.get(`https://forensixplore-backend.onrender.com/blog/getblog/${blogId}`);
+            const response = await axios.get(`https://forensixplore-backend-production.up.railway.app/blog/getblog/${blogId}`);
             const blog = response.data;
             setFormData({
                 title: blog.title,
@@ -88,7 +88,7 @@ function EditBlog() {
                 updateData.append('thumbnail', thumbnail);
             }
             updateData.append('blogLink', blogLink);
-            await axios.put(`https://forensixplore-backend.onrender.com/blog/updateblog/${id}`, updateData, config);
+            await axios.put(`https://forensixplore-backend-production.up.railway.app/blog/updateblog/${id}`, updateData, config);
             Swal.fire({
                 title: 'Success!',
                 text: 'Blog updated successfully',

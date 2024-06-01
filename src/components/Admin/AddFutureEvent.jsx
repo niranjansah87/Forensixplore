@@ -41,7 +41,7 @@ function AddFutureEvent() {
             formDataToSend.append('eventPoster', formData.eventPoster);
             formDataToSend.append('registrationLink', formData.registrationLink);
 
-            const response = await axios.post(`https://forensixplore-backend.onrender.com/fevent/createfutureevent`, formDataToSend, {
+            const response = await axios.post(`https://forensixplore-backend-production.up.railway.app/fevent/createfutureevent`, formDataToSend, {
                 headers: {
                     'auth-token': token,
                     'Content-Type': 'multipart/form-data'

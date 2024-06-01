@@ -50,7 +50,7 @@ function AddBlog() {
             formData.append('description', description);
             formData.append('thumbnail', thumbnail);
             formData.append('blogLink', blogLink);
-            await axios.post('https://forensixplore-backend.onrender.com/blog/createblog', formData, config);
+            await axios.post('https://forensixplore-backend-production.up.railway.app/blog/createblog', formData, config);
             Swal.fire({
                 title: 'Success!',
                 text: 'Blog added successfully',

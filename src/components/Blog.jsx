@@ -9,7 +9,7 @@ function Blog() {
 
   useEffect(() => {
     // Fetch data from backend API endpoint
-    axios.get('https://forensixplore-backend.onrender.com/blog/getblog')
+    axios.get('https://forensixplore-backend-production.up.railway.app/blog/getblog')
       .then(response => setBlogs(response.data))
       .catch(error => console.error('Error fetching blogs:', error));
   }, []);
@@ -45,7 +45,7 @@ function Blog() {
             blogs.map(blog => (
               <div className="nft" key={blog._id}>
                 <div className='main'>
-                  <img className='tokenImage' src={`https://forensixplore-backend.onrender.com/${blog.blog_thumbnail}`} alt={blog.title} />
+                  <img className='tokenImage' src={`https://forensixplore-backend-production.up.railway.app/${blog.blog_thumbnail}`} alt={blog.title} />
                   <h5 className="date2">{sliceDate(blog.date)}</h5>
                   <h5 className="catagory">{blog.category}</h5>
                   <h2 className="title">{blog.title}</h2>

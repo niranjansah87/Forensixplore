@@ -47,7 +47,7 @@ function AddPastEvent() {
         formDataToSend.append('registrationLink', formData.registrationLink);
 
         try {
-            const response = await axios.post('https://forensixplore-backend.onrender.com/pevent/createpastevent', formDataToSend, {
+            const response = await axios.post('https://forensixplore-backend-production.up.railway.app/pevent/createpastevent', formDataToSend, {
                 headers: {
                     'auth-token': token,
                     'Content-Type': 'multipart/form-data'

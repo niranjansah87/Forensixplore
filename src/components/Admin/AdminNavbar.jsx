@@ -17,7 +17,7 @@ const AdminNavbar = () => {
         try {
             const token = localStorage.getItem('authToken');
 
-            await axios.post('https://forensixplore-backend.onrender.com/admin/logout', {}, {
+            await axios.post('https://forensixplore-backend-production.up.railway.app/admin/logout', {}, {
             headers: {
                 'auth-token': token
             },

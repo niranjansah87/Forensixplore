@@ -20,7 +20,7 @@ function ManageFutureEvents() {
             }
 
             try {
-                const response = await axios.get('https://forensixplore-backend.onrender.com/fevent/getfutureevents', {
+                const response = await axios.get('https://forensixplore-backend-production.up.railway.app/fevent/getfutureevents', {
                     params: { page: currentPage, limit: 4 }, // Fetch 4 events per page
                     headers: { 'auth-token': token }
                 });
@@ -41,7 +41,7 @@ function ManageFutureEvents() {
     const handleDelete = async (id) => {
         const token = localStorage.getItem('authToken');
         try {
-            await axios.delete(`https://forensixplore-backend.onrender.com/fevent/deletefutureevent/${id}`, {
+            await axios.delete(`https://forensixplore-backend-production.up.railway.app/fevent/deletefutureevent/${id}`, {
                 headers: { 'auth-token': token }
             });
             setEvents(events.filter(event => event._id !== id));

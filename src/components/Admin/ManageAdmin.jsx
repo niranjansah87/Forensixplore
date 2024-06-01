@@ -18,7 +18,7 @@ function ManageAdmin() {
             }
 
             try {
-                const response = await axios.get('https://forensixplore-backend.onrender.com/admin/getuser', {
+                const response = await axios.get('https://forensixplore-backend-production.up.railway.app/admin/getuser', {
                     headers: {
                         'auth-token': token
                     }
