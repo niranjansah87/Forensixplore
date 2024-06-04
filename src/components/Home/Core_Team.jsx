@@ -36,8 +36,8 @@ const Team = () => {
               <div className="col-lg-6 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
                 <div className="single_team">
                   <img src={sumanth} className="img-fluid2" alt="image" />
-                  <h4>Secretary</h4>
-                  <p>Sumanth Dhruva</p>
+                  <h4>Sumanth Dhruva</h4>
+                  <p>Secretary</p>
                 </div>
               </div>
               <div className="col-lg-6 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
