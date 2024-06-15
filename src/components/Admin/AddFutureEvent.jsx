@@ -88,7 +88,7 @@ function AddFutureEvent() {
                                 <option value="LCH">LCH</option>
                             </select>
                             <label>Description</label>
-                            <textarea rows="2" placeholder="Enter the Description" name="description" value={formData.description} onChange={handleChange} required></textarea>
+                            <textarea rows="2" placeholder="Enter the Description" name="description" value={formData.description} onChange={handleChange} ></textarea>
                             <div className="form__control">
                                 <label htmlFor="thumbnail">Event Poster</label>
                                 <input type="file" id="thumbnail" name="eventPoster" onChange={handleFileChange} />
