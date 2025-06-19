@@ -1,6 +1,6 @@
 # Forensixplore - Department Club Website
 
-Forensixplore is the official website for the Forensixplore Club, a student-run organization at KL University dedicated to advancing knowledge and skills in digital forensics, cybersecurity, and technology. Built with the MERN stack (MongoDB, Express.js, React, Node.js), this platform serves as a dynamic hub for club events, resources, member engagement, and community outreach.
+Forensixplore is the official website for the Forensixplore Club, A cybersecurity club of csit department at KL University dedicated to advancing knowledge and skills in digital forensics, cybersecurity, and technology. Built with the MERN stack (MongoDB, Express.js, React, Node.js), this platform serves as a dynamic hub for club events, resources, member engagement, and community outreach.
 
 ## Features
 - **Event Portal**: View and register for club events like workshops, CTFs (Capture The Flag), and seminars.
