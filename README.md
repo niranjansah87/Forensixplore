@@ -104,7 +104,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 Reach out to the Forensixplore Club for support or collaboration:
 - **Maintainer**: Niranjan Sah ([niranjansah87](https://github.com/niranjansah87))
-- **Email**: forensixplore@kluniversity.in (replace with actual club email)
-- **Website**: [Forensixplore Club](#) (update with deployed URL)
+- **Email**: forensixplore@kluniversity.in 
+- **Website**: [Forensixplore Club](#) 
 
 Join us in exploring the exciting world of digital forensics and cybersecurity!
